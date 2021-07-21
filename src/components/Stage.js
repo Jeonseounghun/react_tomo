@@ -1,12 +1,11 @@
 import React, { Component, useState } from "react";
 import "../scss/main.scss";
-
+import "../scss/stage.scss";
 import axios from "axios";
-import Header_detail from "./header_detail";
 import logo from "../images/logo.svg";
-import MainTapContent from "./section_main_tap_content";
 import Footer from "./section_footer";
-import Filter from "./section_filter";
+import Headerdetail from "./header_detail";
+import StageContents from "./section_stageContent";
 
 const tap_title = {
   title: "아이디찾기",
@@ -19,7 +18,6 @@ class Stage extends Component {
     this.state = {
       data: [],
       footer: "stage",
-      headtag: "business",
     };
   }
 
@@ -28,7 +26,7 @@ class Stage extends Component {
   }
 
   _getData = async () => {
-    const res = await axios.get("/api");
+    const res = await axios.get("/api/stage");
 
     res.data.data.map((El, index) => {
       if (El.start_day) {
@@ -44,9 +42,8 @@ class Stage extends Component {
   render() {
     return (
       <>
-        <Header_detail tap_title={tap_title} />
-        <MainTapContent data={this.state.data} headtag={this.state.headtag} />
-        <Filter />
+        <Headerdetail tap_title={tap_title} />
+        <StageContents />
         <Footer state={this.state.footer} />
       </>
     );

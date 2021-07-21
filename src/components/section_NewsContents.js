@@ -1,5 +1,6 @@
 import React from "react";
 import "../scss/news.scss";
+import imag from "../images/뉴스 썸네일 1.png";
 
 const NewsContent = (props) => {
   console.log(props.data);
@@ -18,7 +19,7 @@ const NewsContent = (props) => {
         }}
       >
         <div className="contents_img">
-          <img src={El.image} alt="" />
+          <img src={imag} alt="" />
         </div>
         <div className="content">
           <div className="content__title">{El.title}</div>
@@ -33,10 +34,10 @@ const NewsContent = (props) => {
       <section className="top_menu news active">
         <ul>
           <li className="active">
-            <a href="javascript:void(0)">스타트업뉴스</a>
+            <a>스타트업뉴스</a>
           </li>
           <li className="">
-            <a href="javascript:void(0)">관심뉴스</a>
+            <a>관심뉴스</a>
             <section className="contents_list news"></section>
           </li>
         </ul>
@@ -45,7 +46,7 @@ const NewsContent = (props) => {
       <section className="categori active">
         <div className="icon__constainer">
           <div className="icon active">
-            <a href="javascript:void(0)">
+            <a>
               <div>
                 <i className="far fa-building"></i>
               </div>
@@ -53,7 +54,7 @@ const NewsContent = (props) => {
             </a>
           </div>
           <div className="icon">
-            <a href="javascript:void(0)">
+            <a>
               <div>
                 {" "}
                 <i className="fa fa-coins"></i>
@@ -62,7 +63,7 @@ const NewsContent = (props) => {
             </a>
           </div>
           <div className="icon">
-            <a href="javascript:void(0)">
+            <a>
               <div>
                 <i className="fas fa-clipboard-list"></i>
               </div>
@@ -70,7 +71,7 @@ const NewsContent = (props) => {
             </a>
           </div>
           <div className="icon">
-            <a href="javascript:void(0)">
+            <a>
               <div>
                 <i className="fas fa-newspaper"></i>
               </div>
@@ -78,7 +79,7 @@ const NewsContent = (props) => {
             </a>
           </div>
           <div className="icon">
-            <a href="javascript:void(0)">
+            <a>
               <div>
                 <i className="fas fa-microphone"></i>
               </div>
@@ -86,7 +87,7 @@ const NewsContent = (props) => {
             </a>
           </div>
           <div className="icon">
-            <a href="javascript:void(0)">
+            <a>
               <div>
                 {" "}
                 <i className="fas fa-ellipsis-h"></i>
