@@ -1,0 +1,576 @@
+section.join1,
+section.join2,
+section.join3,
+section.join4,
+section.join5 {
+  display: none;
+}
+
+section.join1.active {
+  display: block;
+}
+
+/* 회원가입 1첫번쨰 */
+section.condition_container {
+  position: absolute;
+  bottom: 9rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: 0.5;
+}
+
+section.condition_container > div {
+  padding: 0.5rem 0;
+  border-bottom: 0.05rem solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 2rem;
+  background-color: white;
+}
+
+section.condition_container > div .scroll__icon {
+  flex: 8;
+}
+section.condition_container > div .check__icon {
+  flex: 2;
+}
+
+section.condition_container > div:first-child {
+  border-top: 0.05rem solid #f5f5f5;
+}
+section.condition_container > div span {
+  padding: 0 0.25rem;
+  font-family: NotoSansKR;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+section.condition_container > div .check__icon {
+  font-family: NotoSansKR;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666666;
+}
+
+section.condition_container > div i {
+  color: #bdbdbd;
+  padding: 0 0.5rem 0 0.8rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+section.condition_container div .check__icon.active i {
+  color: #10e5d5;
+  transition: 0.3s;
+}
+
+section.condition_container span.content {
+  transition: 1;
+  margin-top: 1rem;
+  overflow: scroll;
+  height: 0;
+  background-color: white;
+  width: 100%;
+}
+
+section.condition_container > div.active {
+  height: calc(100vh - 5rem - 13rem);
+}
+section.condition_container > div.active span.content {
+  height: calc(100vh - 5rem - 16rem);
+  margin-top: 0.5rem;
+  background-color: white;
+  font-size: 0.5rem;
+  padding: 0 1rem;
+}
+
+/* ########################################################## */
+
+section.join_logo {
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+section.join_logo .join_logo {
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 3;
+}
+
+section.join_logo .join_logo img {
+  width: 60%;
+}
+section.join_logo .text_container {
+  width: 100%;
+  flex: 2;
+}
+
+section.join_logo h1 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: NotoSansKR;
+}
+
+section.join_logo h2 {
+  margin: 0.3rem 0;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: NotoSansKR;
+  color: #999999;
+}
+/* ############################################################### */
+
+/* 회원가입 2첫번쨰 */
+/* ########################################################## */
+section.join2.active {
+  display: block;
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+}
+
+section.join2 form > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0 1.5rem;
+}
+
+section.join2 form > div > div {
+  padding: 0.2rem 0;
+}
+section.join2 form > div > div span:last-child {
+  color: #dc3545;
+}
+section.join2 form > div > div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.join2 form > div:nth-child(2) input,
+section.join2 form > div:nth-child(3) input {
+  width: 100%;
+}
+
+section.join2 form > div:nth-child(2) i,
+section.join2 form > div:nth-child(3) i {
+  position: absolute;
+  right: 2rem;
+  color: #d7d7d7;
+}
+
+section.join2 span {
+  font-family: NotoSansKR;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.58;
+  letter-spacing: -0.48px;
+  text-align: left;
+  color: #333333;
+}
+
+section.join2 .btn {
+  width: 20%;
+  height: 2.5rem;
+  font-family: NotoSansKR;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.58;
+  letter-spacing: -0.48px;
+  text-align: center;
+  color: #666666;
+  border-radius: 0.25rem;
+  background-color: #ededed;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.join2 input {
+  border: 0.05rem solid #ededed;
+  border-radius: 0.2rem;
+  height: 2.5rem;
+  width: 75%;
+  margin: 0;
+}
+
+section.join2 input.active {
+  border: 0.05rem solid #dc3545;
+}
+
+section.join2 .error {
+  display: none;
+}
+
+section.join2 .error.active {
+  display: block;
+  font-family: NotoSansKR;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.9;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #dc3545;
+}
+
+/* 회원가입 3첫번쨰 */
+/* ########################################################## */
+
+section.join3.active {
+  display: block;
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+}
+
+section.join3 form > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0 1.5rem;
+}
+
+section.join3 form > div > div {
+  padding: 0.2rem 0;
+}
+
+section.join3 form > div > div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.join3 span {
+  font-family: NotoSansKR;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.58;
+  letter-spacing: -0.48px;
+  text-align: left;
+  color: #333333;
+}
+
+section.join3 .btn {
+  width: 20%;
+  height: 2.5rem;
+  font-family: NotoSansKR;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.58;
+  letter-spacing: -0.48px;
+  text-align: center;
+  color: #666666;
+  border-radius: 0.25rem;
+  background-color: #ededed;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.join3 input {
+  border: 0.05rem solid #ededed;
+  border-radius: 0.2rem;
+  height: 2.5rem;
+  width: 75%;
+  margin: 0;
+}
+
+section.join3 input.active {
+  border: 0.05rem solid #dc3545;
+}
+
+section.join3 .error {
+  display: none;
+}
+
+section.join3 .error.active {
+  display: block;
+  font-family: NotoSansKR;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.9;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #dc3545;
+}
+
+/* #######4번쨰 페이지######################### */
+section.join4.active {
+  position: absolute;
+  width: 100%;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+section.join4 > form {
+  width: 100%;
+}
+
+section.join4 > form > div {
+  width: 100%;
+  margin: 0.5rem 0;
+  display: flex;
+}
+
+section.join4 > form > div span,
+section.join4 > form > div input {
+  position: relative;
+  left: 1rem;
+  flex: 1;
+  margin-right: 2rem;
+}
+
+section.join4 > form > div input {
+  border: 0.05rem solid #ededed;
+  border-radius: 0.2rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.join4 > form > div input::placeholder {
+  font-size: 1rem;
+  padding-left: 1px;
+}
+
+section.join4 .join__title {
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: NotoSansKR;
+}
+
+section.join4 .join__yymmdd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+section.join4 .join__yymmdd span,
+section.join4 .join__yymmdd select {
+  margin: 0;
+  color: #817c7c;
+  font-size: 1rem;
+  flex: 0.3;
+}
+
+section.join4 .join__yymmdd select:last-child {
+  margin-right: 1rem;
+}
+
+section.join4 .join__content {
+  font-family: NotoSansKR;
+  font-size: 0.625rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  color: #999999;
+}
+
+.join4 .join__class select {
+  width: 100%;
+  border: 0.05rem solid #ededed;
+  border-radius: 0.2rem;
+  height: 2.5rem;
+  margin: 0 1rem;
+  text-align-last: left;
+  text-align: left;
+  -ms-text-align-last: left;
+  -moz-text-align-last: left;
+  font-family: NotoSansKR;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  font-size: 1rem;
+  padding-left: 1px;
+  text-align: left;
+  color: #999999;
+}
+
+/* ###################################################### */
+/* ##############5번쨰 페이지############################# */
+section.join5.active {
+  position: absolute;
+  width: 100%;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: calc(100vh - 5rem - 6rem);
+  overflow-x: scroll;
+}
+
+section.join5 > form {
+  width: 100%;
+}
+
+section.join5 > form > div {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+}
+
+section.join5 > form > div span,
+section.join5 > form > div input {
+  position: relative;
+  left: 1rem;
+  flex: 1;
+  margin-right: 2rem;
+}
+
+section.join5 > form > div input {
+  border: 0.05rem solid #ededed;
+  border-radius: 0.2rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.join5 > form > div input::placeholder {
+  text-align-last: left;
+  text-align: left;
+  -ms-text-align-last: left;
+  -moz-text-align-last: left;
+  font-family: NotoSansKR;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-size: 1rem;
+  padding-left: 1px;
+  text-align: left;
+  color: #999999;
+}
+
+section.join5 .join__title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+section.join5 .join__yymm,
+section.join5 .join__yymm2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+section.join5 .join__yymm span,
+section.join5 .join__yymm select,
+section.join5 .join__yymm2 span,
+section.join5 .join__yymm2 select {
+  margin: 0;
+  color: #817c7c;
+  font-size: 1rem;
+  flex: 0.3;
+}
+
+section.join5 .join__yymm select:last-child,
+section.join5 .join__yymm2 select:last-child {
+  margin-right: 1rem;
+}
+
+section.join5 .join__content {
+  font-family: NotoSansKR;
+  font-size: 0.625rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  color: #999999;
+}
+
+.join5 .join__class select {
+  width: 100%;
+  border: 0.05rem solid #ededed;
+  border-radius: 0.2rem;
+  height: 2.5rem;
+  margin: 0 1rem;
+  text-align-last: left;
+  text-align: left;
+  -ms-text-align-last: left;
+  -moz-text-align-last: left;
+  font-family: NotoSansKR;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-size: 1rem;
+  padding-left: 1px;
+  text-align: left;
+  color: #999999;
+}
+
+.chech_box_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chech_box_container .title {
+  font-family: NotoSansKR;
+  font-size: 1rem;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  color: #333333;
+  padding-left: 1rem;
+}
+
+.chech_box_container .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.chech_box_container .container .checkbox {
+  width: 33%;
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  color: #999999;
+  transition: 0.3s;
+  padding: 0.3rem 0;
+}
+
+.chech_box_container .container .checkbox.active {
+  color: #10e5d5;
+  transition: 0.3s;
+}

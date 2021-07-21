@@ -1,0 +1,178 @@
+section.login {
+  position: absolute;
+  width: 100%;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+section.login > form {
+  width: 100%;
+}
+
+section.login > form > div {
+  width: 100%;
+  margin: 0.5rem 0;
+  display: flex;
+  margin: 1rem 0;
+}
+
+section.login > form > div span,
+section.login > form > div input {
+  position: relative;
+  left: 1rem;
+  flex: 1;
+  margin-right: 2rem;
+}
+
+section.login > form > div input {
+  border: 0.05rem solid #ededed;
+  border-radius: 0.2rem;
+  height: 2.5rem;
+}
+
+section.login > form > div input::placeholder {
+  font-size: 1rem;
+  padding-left: 1px;
+}
+
+section.login .login__title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+section.login .login__start {
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+section.login .login__start span {
+  background-color: #10e5d5;
+  color: white;
+  border-radius: 1.5rem;
+  width: 90%;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  box-shadow: 0 5px 15px 0 rgba(16, 229, 213, 0.3);
+}
+
+section.login .login__container {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.login .login__container div {
+  border-right: 0.08rem solid #817c7c;
+  font-size: 1rem;
+  padding: 0 0.8rem;
+  font-weight: 700;
+}
+
+section.login .login__container div:last-child {
+  border: none;
+}
+
+section.login .login__yymmdd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.login .login__yymmdd span,
+section.login .login__yymmdd select {
+  margin: 0;
+  color: #817c7c;
+  font-size: 1rem;
+  flex: 0.23;
+}
+
+section.login .login__yymmdd select:last-child {
+  margin-right: 1rem;
+}
+
+section.temporary__id {
+  display: none;
+}
+
+section.temporary__id.show {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #817c7c;
+  opacity: 0.95;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.temporary__id div.temporary__id {
+  width: 25rem;
+  height: 15rem;
+  background-color: white;
+  opacity: 1;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+
+section.temporary__id div.temporary__id > div {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+section.temporary__id div.temporary__id .text {
+  text-align: center;
+}
+
+section.temporary__id div.temporary__id .text .temporary {
+  color: #3f82ff;
+}
+section.temporary__id div.temporary__id .copy {
+  background-color: #ededed;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: #817c7c;
+}
+
+section.temporary__id div.temporary__id .login__contain {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+section.temporary__id div.temporary__id .login__contain > div {
+  width: 5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 3rem;
+  font-weight: 700;
+}
+
+section.temporary__id div.temporary__id .login__contain .login {
+  color: white;
+  background-color: #10e5d5;
+  border: 1px solid #10e5d5;
+}
+
+section.temporary__id div.temporary__id .login__contain .confirm {
+  color: #bdbdbd;
+  background-color: white;
+}
