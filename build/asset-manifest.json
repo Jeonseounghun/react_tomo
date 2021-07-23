@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/static/js/main.e7bf7962.chunk.js",
-    "main.js.map": "/static/js/main.e7bf7962.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.604c73f6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.604c73f6.js.map",
-    "static/js/2.6eaf381a.chunk.js": "/static/js/2.6eaf381a.chunk.js",
-    "static/js/2.6eaf381a.chunk.js.map": "/static/js/2.6eaf381a.chunk.js.map",
-    "static/js/3.d6358d06.chunk.js": "/static/js/3.d6358d06.chunk.js",
-    "static/js/3.d6358d06.chunk.js.map": "/static/js/3.d6358d06.chunk.js.map",
+    "main.css": "/static/css/main.de33d32f.chunk.css",
+    "main.js": "/static/js/main.044f32e2.chunk.js",
+    "main.js.map": "/static/js/main.044f32e2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8cf04af8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8cf04af8.js.map",
+    "static/js/2.5fda6d76.chunk.js": "/static/js/2.5fda6d76.chunk.js",
+    "static/js/2.5fda6d76.chunk.js.map": "/static/js/2.5fda6d76.chunk.js.map",
+    "static/js/3.bc6e89f1.chunk.js": "/static/js/3.bc6e89f1.chunk.js",
+    "static/js/3.bc6e89f1.chunk.js.map": "/static/js/3.bc6e89f1.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.6eaf381a.chunk.js.LICENSE.txt": "/static/js/2.6eaf381a.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+    "static/css/main.de33d32f.chunk.css.map": "/static/css/main.de33d32f.chunk.css.map",
+    "static/js/2.5fda6d76.chunk.js.LICENSE.txt": "/static/js/2.5fda6d76.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/static/media/chevron-down-solid.add37aac.svg",
+    "static/media/illust-join.0a3b6502.png": "/static/media/illust-join.0a3b6502.png",
+    "static/media/illust-main.1650abb6.png": "/static/media/illust-main.1650abb6.png",
+    "static/media/logo.3acbabef.svg": "/static/media/logo.3acbabef.svg",
+    "static/media/main_tap.scss": "/static/media/main_tap_detail.6e3db369.png",
+    "static/media/뉴스 썸네일 1.5e715fdf.png": "/static/media/뉴스 썸네일 1.5e715fdf.png",
+    "static/media/데이터하이브.1a389e0c.PNG": "/static/media/데이터하이브.1a389e0c.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.604c73f6.js",
-    "static/js/2.6eaf381a.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.e7bf7962.chunk.js"
+    "static/js/runtime-main.8cf04af8.js",
+    "static/js/2.5fda6d76.chunk.js",
+    "static/css/main.de33d32f.chunk.css",
+    "static/js/main.044f32e2.chunk.js"
   ]
 }

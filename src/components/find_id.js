@@ -1,15 +1,11 @@
 import React from "react";
 import "../scss/main.scss";
 import "../scss/section_find_id.scss";
-import Header_detail from "./header_detail";
-import Section_copyright from "./section_copyright";
+import Headerdetail from "./header_detail";
+import SectionCopyright from "./section_copyright";
 
 const tap_title = {
   title: "아이디찾기",
-};
-
-const Back_page = () => {
-  window.location.href = "javascript:history.back()";
 };
 
 const tempoary_id = () => {
@@ -19,7 +15,7 @@ const tempoary_id = () => {
 const Find_id = () => {
   return (
     <>
-      <Header_detail tap_title={tap_title} />
+      <Headerdetail tap_title={tap_title} />
       <section className="login">
         <form action="">
           <div className="login__title">
@@ -198,7 +194,7 @@ const Find_id = () => {
       <section className="submit" onClick={tempoary_id}>
         <span>확인</span>
       </section>
-      <Section_copyright />
+      <SectionCopyright />
     </>
   );
 };

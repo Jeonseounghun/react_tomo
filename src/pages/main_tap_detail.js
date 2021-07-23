@@ -1,23 +1,20 @@
-import React, { Component, useState } from "react";
-import "../scss/main.scss";
-import "../scss/stage.scss";
+import React, { Component } from "react";
 import axios from "axios";
-import logo from "../images/logo.svg";
-import Footer from "./section_footer";
-import Headerdetail from "./header_detail";
-import StageContents from "./section_stageContent";
+import "../scss/main.scss";
+import Headerdetail from "../components/header_detail";
+import DetailContents from "../components/section_maintapDetail";
+import Footer from "../components/section_footer";
 
 const tap_title = {
-  title: "아이디찾기",
-  logo: logo,
+  title: "지원사업 조회",
 };
 
-class Stage extends Component {
+class Detail extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
-      footer: "stage",
+      footer: "main_tap",
     };
   }
 
@@ -26,7 +23,7 @@ class Stage extends Component {
   }
 
   _getData = async () => {
-    const res = await axios.get("/api/stage");
+    const res = await axios.get("/api/main_tap_data");
 
     res.data.data.map((El, index) => {
       if (El.start_day) {
@@ -39,15 +36,16 @@ class Stage extends Component {
     });
     this.setState({ data: res.data.data });
   };
+
   render() {
     return (
       <>
         <Headerdetail tap_title={tap_title} />
-        <StageContents />
+        <DetailContents state={this.state.data} />
         <Footer state={this.state.footer} />
       </>
     );
   }
 }
 
-export default Stage;
+export default Detail;

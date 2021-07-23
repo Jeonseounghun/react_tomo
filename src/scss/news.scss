@@ -123,7 +123,7 @@ section.categori .icon__constainer {
   padding: 0.5rem 0.5rem;
 }
 
-section.categori .icon__constainer .icon a {
+section.categori .icon__constainer .icon {
   display: flex;
   flex-direction: column;
   color: #bdbdbd;
@@ -131,19 +131,19 @@ section.categori .icon__constainer .icon a {
   align-items: center;
 }
 
-section.categori .icon__constainer .icon a i {
+section.categori .icon__constainer .icon i {
   font-size: 1.4375rem;
   position: relative;
 }
 
-section.categori .icon__constainer .icon a span {
+section.categori .icon__constainer .icon {
   font-size: 0.5625em;
   font-family: NotoSansKR;
   font-weight: 700;
   margin: 0.2rem;
   background-color: rgba(255, 255, 255, 0);
 }
-section.categori .icon__constainer .icon a div {
+section.categori .icon__constainer .icon div {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -154,15 +154,15 @@ section.categori .icon__constainer .icon a div {
   transition: 0.3s;
 }
 
-section.categori .icon__constainer .icon.active a div {
+section.categori .icon__constainer .icon.active div {
   background-color: #10e5d5;
   transition: 0.3s;
 }
-section.categori .icon__constainer .icon.active a span {
+section.categori .icon__constainer .icon.active span {
   color: #10e5d5;
   transition: 0.3s;
 }
-section.categori .icon__constainer .icon.active a i {
+section.categori .icon__constainer .icon.active i {
   color: white;
   transition: 0.3s;
 }

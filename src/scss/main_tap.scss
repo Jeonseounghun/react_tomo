@@ -153,9 +153,7 @@ section.detail {
   width: 100%;
   top: 5rem;
   height: 32rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-wrap: wrap;
+
   overflow: hidden;
 }
 
@@ -165,7 +163,7 @@ section.detail .title {
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-
+  background-color: rgba(0, 0, 0, 0.7);
   color: #ffffff;
   height: 4.5rem;
   display: flex;
@@ -173,6 +171,8 @@ section.detail .title {
   align-items: center;
   z-index: 9;
   flex: 1;
+  text-align: center;
+  padding: 0 2rem;
 }
 
 section.detail .title img {
@@ -187,6 +187,7 @@ section.detail .title img {
 }
 
 section.detail .contents {
+  width: 100%;
   background-color: white;
   width: auto;
   padding-top: 0.75rem 0;
@@ -210,6 +211,7 @@ section.detail .contents span {
   color: #666666;
   padding: 0.5rem 0;
   left: 0;
+  overflow: scroll;
 }
 
 section.detail .contents div:first-child {
@@ -221,7 +223,10 @@ section.detail .contents > div {
   display: flex;
   justify-content: center;
 }
-
+section.detail .contents > div:first-child > span {
+  overflow: scroll;
+  height: 5rem;
+}
 section.detail .contents > div > span:first-child {
   flex: 2;
   color: #999999;

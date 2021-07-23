@@ -1,7 +1,7 @@
 import React from "react";
 import "../scss/main.scss";
 
-const Section_copyright = () => {
+const SectionCopyright = () => {
   return (
     <section className="copyright">
       Copyright© 2021. Datahive. All right Reserved
@@ -9,4 +9,4 @@ const Section_copyright = () => {
   );
 };
 
-export default Section_copyright;
+export default SectionCopyright;

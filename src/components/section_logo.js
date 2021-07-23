@@ -4,7 +4,7 @@ import main_logo from "../images/illust-main.png";
 import "../scss/main.scss";
 import "../scss/section_logo.scss";
 
-const Section_logo = () => {
+const SectionLogo = () => {
   return (
     <section className="logo">
       <div className="logo">
@@ -24,4 +24,4 @@ const Section_logo = () => {
   );
 };
 
-export default Section_logo;
+export default SectionLogo;

@@ -136,7 +136,7 @@ footer {
     align-items: center;
   }
 
-  .footer__tag .container a {
+  .footer__tag .container span {
     font-family: NotoSansKR;
     font-size: 0.8rem;
     font-weight: bold;
@@ -161,7 +161,7 @@ footer {
     transition: 0.3s;
   }
 
-  .footer__tag .container.active a,
+  .footer__tag .container.active span,
   .footer__tag .container.active i {
     color: #10e5d5;
     transition: 0.3s;
@@ -178,6 +178,7 @@ section.submit {
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-size: 1rem;
   span {
     display: block;
     text-align: center;
@@ -197,6 +198,31 @@ section.submit {
 section.submit.end span {
   color: white;
   background-color: #10e5d5;
+}
+
+section.confirm.end {
+  position: absolute;
+  bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  span {
+    display: block;
+    text-align: center;
+    width: 80%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 5px 15px 0 rgba(16, 229, 213, 0.3);
+    border: solid 0.05rem #10e5d5;
+    background-color: #10e5d5;
+  }
 }
 /* ########################################################### */
 select {

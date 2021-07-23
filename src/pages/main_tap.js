@@ -3,10 +3,10 @@ import "../scss/main.scss";
 
 import axios from "axios";
 import logo from "../images/logo.svg";
-import MainTapContent from "./section_main_tap_content";
-import Footer from "./section_footer";
-import Filter from "./section_filter";
-import Headerdetail from "./header_detail";
+import MainTapContent from "../components/section_main_tap_content";
+import Footer from "../components/section_footer";
+import Filter from "../components/section_filter";
+import Headerdetail from "../components/header_detail";
 
 const tap_title = {
   title: "아이디찾기",
@@ -19,7 +19,7 @@ class Main_tap extends Component {
     this.state = {
       data: [],
       footer: "main_tap",
-      headtag: "business",
+      headtag: "맞춤사업",
     };
   }
 
@@ -28,7 +28,7 @@ class Main_tap extends Component {
   }
 
   _getData = async () => {
-    const res = await axios.get("/api/main_tap");
+    const res = await axios.get("/api/main_tap_data");
 
     res.data.data.map((El, index) => {
       if (El.start_day) {

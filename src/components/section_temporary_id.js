@@ -1,15 +1,9 @@
 import React from "react";
 import "../scss/main.scss";
 import "../scss/section_find_id.scss";
-import Header_detail from "./header_detail";
-import Section_copyright from "./section_copyright";
-
-const tap_title = {
-  title: "아이디찾기",
-};
 
 const Back_page = () => {
-  window.location.href = "javascript:history.back()";
+  window.history.back();
 };
 
 const LoginPage = () => {
@@ -19,7 +13,6 @@ const LoginPage = () => {
 const TemporaryID = () => {
   return (
     <>
-      <Header_detail props={tap_title} />
       <section className="temporary__id show">
         <div className="temporary__id">
           <div className="text">
@@ -42,7 +35,6 @@ const TemporaryID = () => {
       <section className="submit">
         <span>확인</span>
       </section>
-      <Section_copyright />
     </>
   );
 };

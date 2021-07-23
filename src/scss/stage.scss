@@ -236,6 +236,12 @@ section.company_detail .btn span {
 section.company_detail .stage_content {
   border-bottom: 0.0625rem solid #ededed;
 }
+section.company_detail .stage_content .contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
 
 section.company_detail .stage_content .period {
   font-size: 0.7rem;

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "../scss/main.scss";
-
-import Header_detail from "./header_detail";
-import Section_copyright from "./section_copyright";
 import "../scss/join.scss";
 import join_image from "../images/illust-join.png";
+import Headerdetail from "../components/header_detail";
+import SectionCopyright from "../components/section_copyright";
 
 const tap_title = {
   title: "회원가입",
@@ -40,7 +39,7 @@ const Join = () => {
   const [joinNum, setJoinNum] = useState(1);
   return (
     <>
-      <Header_detail tap_title={tap_title} />
+      <Headerdetail tap_title={tap_title} />
       <section className={"join1 " + (joinNum === 1 ? "active" : "")}>
         <section className="join_logo">
           <div className="join_logo">
@@ -993,7 +992,7 @@ const Join = () => {
       >
         <span>{joinNum === 5 ? "회원가입 완료" : "다음"}</span>
       </section>
-      <Section_copyright />
+      <SectionCopyright />
     </>
   );
 };

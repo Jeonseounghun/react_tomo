@@ -15,10 +15,10 @@ const Footer = (props) => {
               setState("main_tap");
             }}
           >
-            <a>
+            <span>
               <i className="fas fa-list selected"></i>
-            </a>
-            <a>지원사업</a>
+            </span>
+            <span>지원사업</span>
           </div>
           <div
             className={"footer container " + (state === "news" ? "active" : "")}
@@ -27,10 +27,10 @@ const Footer = (props) => {
               setState("news");
             }}
           >
-            <a>
+            <span>
               <i className="fas fa-newspaper"></i>
-            </a>
-            <a>뉴스</a>
+            </span>
+            <span>뉴스</span>
           </div>
           <div
             className={
@@ -41,10 +41,10 @@ const Footer = (props) => {
               setState("stage");
             }}
           >
-            <a>
+            <span>
               <i className="far fa-comment-dots"></i>
-            </a>
-            <a>스테이지</a>
+            </span>
+            <span>스테이지</span>
           </div>
           <div
             className={"footer container " + (state === "more" ? "active" : "")}
@@ -53,10 +53,10 @@ const Footer = (props) => {
               setState("more");
             }}
           >
-            <a>
+            <span>
               <i className="fas fa-ellipsis-h"></i>
-            </a>
-            <a>More</a>
+            </span>
+            <span>More</span>
           </div>
         </div>
       </footer>

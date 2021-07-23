@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "../scss/main.scss";
 
 const Back_page = () => {
-  window.location.href = "javascript:history.back()";
+  window.history.back();
+};
+
+const Back_more = () => {
+  window.location.href = `./more`;
 };
 
 const Headerdetail = (props) => {
@@ -24,7 +27,7 @@ const Headerdetail = (props) => {
           <div
             className="back_arrow"
             onClick={() => {
-              Back_page();
+              window.location.pathname === "/more" ? Back_more() : Back_page();
             }}
           >
             <i className="fas fa-arrow-left"></i>

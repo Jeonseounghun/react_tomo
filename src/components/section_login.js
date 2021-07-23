@@ -18,7 +18,7 @@ const to_join = () => {
   window.location.href = "/join";
 };
 
-const Section_login = () => {
+const SectionLogin = () => {
   return (
     <section className="login">
       <form action="">
@@ -53,4 +53,4 @@ const Section_login = () => {
   );
 };
 
-export default Section_login;
+export default SectionLogin;

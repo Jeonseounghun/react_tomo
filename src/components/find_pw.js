@@ -1,9 +1,8 @@
 import React from "react";
 import "../scss/main.scss";
 import "../scss/section_login.scss";
-import Header_detail from "./header_detail";
-import Section_copyright from "./section_copyright";
-import TemporaryPW from "./section_temporary_pw";
+import Headerdetail from "./header_detail";
+import SectionCopyright from "./section_copyright";
 
 const tap_title = {
   title: "비밀번호 찾기",
@@ -16,7 +15,7 @@ const temporary_pw = () => {
 const Find_pw = () => {
   return (
     <>
-      <Header_detail tap_title={tap_title} />
+      <Headerdetail tap_title={tap_title} />
       <section className="login">
         <form action="">
           <div className="login__title">
@@ -197,7 +196,7 @@ const Find_pw = () => {
       <section className="submit" onClick={temporary_pw}>
         <span>확인</span>
       </section>
-      <Section_copyright />
+      <SectionCopyright />
     </>
   );
 };

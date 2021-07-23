@@ -4,37 +4,149 @@ import "../scss/main_tap.scss";
 const MainTapContent = (props) => {
   const [headtag, setHeadtag] = useState(props.headtag);
   const suppoertDatas = props.data;
-  const suppoertData = suppoertDatas.map((El) => (
-    <div className="contents" key={El.index}>
-      <div className="content">
-        <div className="content__title">{El.title}</div>
-        <div className="content__period">
-          {El.start_day} ~ {El.end_day}
-        </div>
-        <div className="content__period">중소벤처기업부</div>
+  let suppoertData = [];
 
-        <div className="content__tags">
-          {El.tag ? (
-            El.tag.map((El) => (
-              <a className="content__tag" href="">
-                {El}
-              </a>
-            ))
-          ) : (
-            <a className="content__tag" href="">
-              태그없음
-            </a>
-          )}
+  switch (headtag) {
+    case "전체사업":
+      suppoertData = suppoertDatas.map((El) => (
+        <div
+          className="contents"
+          onClick={() => {
+            window.location.href = `/main_tap/${El.idx}`;
+          }}
+        >
+          <div className="content">
+            <div className="content__title">{El.title}</div>
+            <div className="content__period">
+              {El.start_day} ~ {El.end_day}
+            </div>
+            <div className="content__period">중소벤처기업부</div>
 
-          <div className="content__money">{El.sup_pay}</div>
+            <div className="content__tags">
+              {El.tag ? (
+                El.tag.map((El) => <span className="content__tag">{El}</span>)
+              ) : (
+                <span className="content__tag">태그없음</span>
+              )}
+
+              <div className="content__money">{El.sup_pay}</div>
+            </div>
+          </div>
+          <div className="content__Dday">
+            <i className="fa-star far"></i>
+            <span>D-8</span>
+          </div>
         </div>
-      </div>
-      <div className="content__Dday">
-        <i className="fa-star far"></i>
-        <span>D-9</span>
-      </div>
-    </div>
-  ));
+      ));
+      break;
+    case "관심사업":
+      suppoertData = suppoertDatas.map((El) =>
+        El.sup_type === "사업화" ? (
+          <div
+            className="contents"
+            onClick={() => {
+              window.location.href = `/main_tap/${El.idx}`;
+            }}
+          >
+            <div className="content">
+              <div className="content__title">{El.title}</div>
+              <div className="content__period">
+                {El.start_day} ~ {El.end_day}
+              </div>
+              <div className="content__period">중소벤처기업부</div>
+
+              <div className="content__tags">
+                {El.tag ? (
+                  El.tag.map((El) => <span className="content__tag">{El}</span>)
+                ) : (
+                  <span className="content__tag">태그없음</span>
+                )}
+
+                <div className="content__money">{El.sup_pay}</div>
+              </div>
+            </div>
+            <div className="content__Dday">
+              <i className="fa-star far"></i>
+              <span>D-8</span>
+            </div>
+          </div>
+        ) : (
+          ""
+        )
+      );
+      break;
+    case "추천사업":
+      suppoertData = suppoertDatas.map((El) =>
+        El.recommend > 50 ? (
+          <div
+            className="contents"
+            onClick={() => {
+              window.location.href = `/main_tap/${El.idx}`;
+            }}
+          >
+            <div className="content">
+              <div className="content__title">{El.title}</div>
+              <div className="content__period">
+                {El.start_day} ~ {El.end_day}
+              </div>
+              <div className="content__period">중소벤처기업부</div>
+
+              <div className="content__tags">
+                {El.tag ? (
+                  El.tag.map((El) => <span className="content__tag">{El}</span>)
+                ) : (
+                  <span className="content__tag">태그없음</span>
+                )}
+
+                <div className="content__money">{El.sup_pay}</div>
+              </div>
+            </div>
+            <div className="content__Dday">
+              <i className="fa-star far"></i>
+              <span>D-9</span>
+            </div>
+          </div>
+        ) : (
+          ""
+        )
+      );
+      break;
+    default:
+      suppoertData = suppoertDatas.map((El) =>
+        El.sup_condition === "창업5년미만" ? (
+          <div
+            className="contents"
+            onClick={() => {
+              window.location.href = `/main_tap/${El.idx}`;
+            }}
+          >
+            <div className="content">
+              <div className="content__title">{El.title}</div>
+              <div className="content__period">
+                {El.start_day} ~ {El.end_day}
+              </div>
+              <div className="content__period">중소벤처기업부</div>
+
+              <div className="content__tags">
+                {El.tag ? (
+                  El.tag.map((El) => <span className="content__tag">{El}</span>)
+                ) : (
+                  <span className="content__tag">태그없음</span>
+                )}
+
+                <div className="content__money">{El.sup_pay}</div>
+              </div>
+            </div>
+            <div className="content__Dday">
+              <i className="fa-star far"></i>
+              <span>D-9</span>
+            </div>
+          </div>
+        ) : (
+          ""
+        )
+      );
+  }
 
   return (
     <>
@@ -42,36 +154,36 @@ const MainTapContent = (props) => {
         <ul>
           <li
             key="1"
-            className={headtag === "business" ? "active" : ""}
+            className={headtag === "맞춤사업" ? "active" : ""}
             onClick={() => {
-              setHeadtag("business");
+              setHeadtag("맞춤사업");
             }}
           >
             <span>맞춤사업</span>
           </li>
           <li
             key="2"
-            className={headtag === "redcommand" ? "active" : ""}
+            className={headtag === "추천사업" ? "active" : ""}
             onClick={() => {
-              setHeadtag("redcommand");
+              setHeadtag("추천사업");
             }}
           >
             <span>추천사업</span>
           </li>
           <li
             key="3"
-            className={headtag === "interest" ? "active" : ""}
+            className={headtag === "관심사업" ? "active" : ""}
             onClick={() => {
-              setHeadtag("interest");
+              setHeadtag("관심사업");
             }}
           >
             <span>관심사업</span>
           </li>
           <li
             key="4"
-            className={headtag === "all" ? "active" : ""}
+            className={headtag === "전체사업" ? "active" : ""}
             onClick={() => {
-              setHeadtag("all");
+              setHeadtag("전체사업");
             }}
           >
             <span>전체사업</span>
