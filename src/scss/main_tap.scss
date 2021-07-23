@@ -271,7 +271,7 @@ section.Board .contents {
 }
 
 /* ######################################################## */
-.contents {
+section.Business .contents {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -279,13 +279,13 @@ section.Board .contents {
   padding: 1rem 1.5rem;
 }
 
-.contents .content {
+section.Business .contents .content {
   display: flex;
   flex-direction: column;
   flex: 8;
 }
 
-.contents .content .content__title {
+section.Business .contents .content .content__title {
   font-family: NotoSansKR;
   font-size: 1rem;
   font-weight: bold;
@@ -295,7 +295,7 @@ section.Board .contents {
   color: #333333;
 }
 
-.contents .content .content__period {
+section.Business .contents .content .content__period {
   font-family: NotoSansKR;
   font-size: 0.875rem;
   font-weight: normal;
@@ -306,7 +306,7 @@ section.Board .contents {
   text-align: left;
   color: #666666;
 }
-.contents .content .content__money {
+section.Business .contents .content .content__money {
   font-family: NotoSansKR;
   font-size: 0.875rem;
   font-weight: normal;
@@ -318,7 +318,7 @@ section.Board .contents {
   color: #666666;
 }
 
-.contents .content__Dday {
+section.Business .contents .content__Dday {
   font-family: NotoSansKR;
   font-size: 1rem;
   width: 100%;
@@ -332,12 +332,12 @@ section.Board .contents {
   align-items: center;
 }
 
-.contents .content__Dday i {
+section.Business .contents .content__Dday i {
   position: relative;
   top: -1.5rem;
 }
 
-.contents .content__Dday span {
+section.Business .contents .content__Dday span {
   position: relative;
   bottom: -1rem;
   color: red;
