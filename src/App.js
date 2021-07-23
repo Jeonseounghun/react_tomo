@@ -14,6 +14,7 @@ import News from "./pages/News_tap";
 import Stage from "./pages/Stage";
 import Detail from "./pages/main_tap_detail";
 import StageDetail from "./pages/stage_detail";
+import SearchTap from "./pages/Search";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route exact path="/stage" component={Stage} />
       <Route exact path="/stage/:id" component={StageDetail} />
       <Route exact path="/more" component={More} />
+      <Route exact path="/search" component={SearchTap} />
     </>
   );
 }

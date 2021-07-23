@@ -1,0 +1,114 @@
+/* ######################################################## */
+.contents {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0.0625rem solid #ededed;
+  padding: 1rem 1.5rem;
+}
+
+.contents .content {
+  display: flex;
+  flex-direction: column;
+  flex: 8;
+}
+
+.contents .content .content__title {
+  font-family: NotoSansKR;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  color: #333333;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.contents .content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contents .content ul li {
+  font-size: 1rem;
+  font-family: NotoSansKR;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  color: #666666;
+  padding: 0.3rem 0;
+}
+/* #################################search */
+section.search {
+  position: relative;
+  background-color: #f2f2f2;
+  top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.search .search__container {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 90%;
+  height: 2rem;
+  border-radius: 3rem;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.06);
+  margin: 0.8rem 0;
+  padding: 0 0.5rem;
+}
+
+section.search .search__container input {
+  flex: 1;
+  height: 80%;
+  margin-right: 0.5rem;
+  border: none;
+  font-family: NotoSansKR;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: black;
+}
+
+section.search .search__container input::placeholder {
+  font-family: NotoSansKR;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #bdbdbd;
+}
+
+section.search .search__container input:focus {
+  outline: none;
+}
+
+section.search .search__container .search__icon {
+  color: #bdbdbd;
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+
+section.search .search__results {
+  width: 100%;
+  background-color: white;
+}
+
+section.search .search__results .search__title {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: NotoSansKR;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #bdbdbd;
+  border-bottom: 0.025rem solid #ededed;
+}
+
+section.search .search__results .search__result {
+  height: calc(100vh - 13.5rem);
+  overflow: scroll;
+}

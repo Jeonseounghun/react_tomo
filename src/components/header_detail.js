@@ -18,7 +18,12 @@ const Headerdetail = (props) => {
             <img src={props.tap_title.logo} alt="" />
           </div>
           <div className="search__icon">
-            <i className="fas fa-search"></i>
+            <i
+              className="fas fa-search"
+              onClick={() => {
+                window.location.href = `/search`;
+              }}
+            ></i>
           </div>
         </header>
       ) : (
