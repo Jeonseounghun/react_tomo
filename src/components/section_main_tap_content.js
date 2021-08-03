@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "../scss/main_tap.scss";
 
 const MainTapContent = (props) => {
@@ -9,46 +11,9 @@ const MainTapContent = (props) => {
   switch (headtag) {
     case "전체사업":
       suppoertData = suppoertDatas.map((El) => (
-        <div
-          className="contents"
-          onClick={() => {
-            window.location.href = `/main_tap/${El.idx}`;
-          }}
-        >
+        <div className="contents" key={El.idx}>
           <div className="content">
-            <div className="content__title">{El.title}</div>
-            <div className="content__period">
-              {El.start_day} ~ {El.end_day}
-            </div>
-            <div className="content__period">중소벤처기업부</div>
-
-            <div className="content__tags">
-              {El.tag ? (
-                El.tag.map((El) => <span className="content__tag">{El}</span>)
-              ) : (
-                <span className="content__tag">태그없음</span>
-              )}
-
-              <div className="content__money">{El.sup_pay}</div>
-            </div>
-          </div>
-          <div className="content__Dday">
-            <i className="fa-star far"></i>
-            <span>D-8</span>
-          </div>
-        </div>
-      ));
-      break;
-    case "관심사업":
-      suppoertData = suppoertDatas.map((El) =>
-        El.sup_type === "사업화" ? (
-          <div
-            className="contents"
-            onClick={() => {
-              window.location.href = `/main_tap/${El.idx}`;
-            }}
-          >
-            <div className="content">
+            <Link to={"/main_tap/" + El.idx}>
               <div className="content__title">{El.title}</div>
               <div className="content__period">
                 {El.start_day} ~ {El.end_day}
@@ -64,6 +29,40 @@ const MainTapContent = (props) => {
 
                 <div className="content__money">{El.sup_pay}</div>
               </div>
+            </Link>
+          </div>
+
+          <div className="content__Dday">
+            <i className="fa-star far"></i>
+            <span>D-8</span>
+          </div>
+        </div>
+      ));
+      break;
+    case "관심사업":
+      suppoertData = suppoertDatas.map((El) =>
+        El.sup_type === "사업화" ? (
+          <div className="contents" key={El.idx}>
+            <div className="content">
+              <Link to={"/main_tap/" + El.idx}>
+                <div className="content__title">{El.title}</div>
+                <div className="content__period">
+                  {El.start_day} ~ {El.end_day}
+                </div>
+                <div className="content__period">중소벤처기업부</div>
+
+                <div className="content__tags">
+                  {El.tag ? (
+                    El.tag.map((El) => (
+                      <span className="content__tag">{El}</span>
+                    ))
+                  ) : (
+                    <span className="content__tag">태그없음</span>
+                  )}
+
+                  <div className="content__money">{El.sup_pay}</div>
+                </div>
+              </Link>
             </div>
             <div className="content__Dday">
               <i className="fa-star far"></i>
@@ -78,28 +77,27 @@ const MainTapContent = (props) => {
     case "추천사업":
       suppoertData = suppoertDatas.map((El) =>
         El.recommend > 50 ? (
-          <div
-            className="contents"
-            onClick={() => {
-              window.location.href = `/main_tap/${El.idx}`;
-            }}
-          >
+          <div className="contents" key={El.idx}>
             <div className="content">
-              <div className="content__title">{El.title}</div>
-              <div className="content__period">
-                {El.start_day} ~ {El.end_day}
-              </div>
-              <div className="content__period">중소벤처기업부</div>
+              <Link to={"/main_tap/" + El.idx}>
+                <div className="content__title">{El.title}</div>
+                <div className="content__period">
+                  {El.start_day} ~ {El.end_day}
+                </div>
+                <div className="content__period">중소벤처기업부</div>
 
-              <div className="content__tags">
-                {El.tag ? (
-                  El.tag.map((El) => <span className="content__tag">{El}</span>)
-                ) : (
-                  <span className="content__tag">태그없음</span>
-                )}
+                <div className="content__tags">
+                  {El.tag ? (
+                    El.tag.map((El) => (
+                      <span className="content__tag">{El}</span>
+                    ))
+                  ) : (
+                    <span className="content__tag">태그없음</span>
+                  )}
 
-                <div className="content__money">{El.sup_pay}</div>
-              </div>
+                  <div className="content__money">{El.sup_pay}</div>
+                </div>
+              </Link>
             </div>
             <div className="content__Dday">
               <i className="fa-star far"></i>
@@ -114,28 +112,27 @@ const MainTapContent = (props) => {
     default:
       suppoertData = suppoertDatas.map((El) =>
         El.sup_condition === "창업5년미만" ? (
-          <div
-            className="contents"
-            onClick={() => {
-              window.location.href = `/main_tap/${El.idx}`;
-            }}
-          >
+          <div className="contents" key={El.idx}>
             <div className="content">
-              <div className="content__title">{El.title}</div>
-              <div className="content__period">
-                {El.start_day} ~ {El.end_day}
-              </div>
-              <div className="content__period">중소벤처기업부</div>
+              <Link to={"/main_tap/" + El.idx}>
+                <div className="content__title">{El.title}</div>
+                <div className="content__period">
+                  {El.start_day} ~ {El.end_day}
+                </div>
+                <div className="content__period">중소벤처기업부</div>
 
-              <div className="content__tags">
-                {El.tag ? (
-                  El.tag.map((El) => <span className="content__tag">{El}</span>)
-                ) : (
-                  <span className="content__tag">태그없음</span>
-                )}
+                <div className="content__tags">
+                  {El.tag ? (
+                    El.tag.map((El) => (
+                      <span className="content__tag">{El}</span>
+                    ))
+                  ) : (
+                    <span className="content__tag">태그없음</span>
+                  )}
 
-                <div className="content__money">{El.sup_pay}</div>
-              </div>
+                  <div className="content__money">{El.sup_pay}</div>
+                </div>
+              </Link>
             </div>
             <div className="content__Dday">
               <i className="fa-star far"></i>

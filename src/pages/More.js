@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../scss/main.scss";
-import Footer from "../components/section_footer";
+
 import MoreContents from "../components/section_MoreContents";
+import Footer from "../components/section_footer";
 
 class More extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class More extends Component {
   render() {
     return (
       <>
-        <MoreContents state={this.state.morecontent} />
+        <MoreContents state={this.state} />
         <Footer state={this.state.footer} />
       </>
     );

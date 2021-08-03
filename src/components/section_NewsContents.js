@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../scss/news.scss";
-import imag from "../images/뉴스 썸네일 1.png";
+import image2 from "../images/1626316846119rain-275317_960_720.jpg";
 
 const NewsContent = (props) => {
   const [category, setCategory] = useState(props.state.category);
@@ -20,7 +20,7 @@ const NewsContent = (props) => {
           }}
         >
           <div className="contents_img">
-            <img src={imag} alt="" />
+            <img src={image2} alt="" />
           </div>
           <div className="content">
             <div className="content__title">{El.title}</div>

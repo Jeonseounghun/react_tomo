@@ -19,10 +19,12 @@ class News extends Component {
       footer: "news",
       headtag: "startnews",
       category: "지원사업",
+      image: [],
     };
   }
   componentDidMount() {
     this._getData();
+    this._getImage();
   }
 
   _getData = async () => {
@@ -31,14 +33,29 @@ class News extends Component {
       if (El.reg_date) {
         res.data.data[index].reg_date = El.reg_date.slice(0, 10);
       }
+      return El;
     });
     this.setState({ data: res.data.data });
   };
+
+  _getImage = async () => {
+    const res = await axios.get("/api/image");
+
+    res.data.data.map((El, index) => {
+      return El;
+    });
+    this.setState({ image: res.data.data });
+  };
+
   render() {
     return (
       <>
         <Headerdetail tap_title={tap_title} />
-        <NewsContent data={this.state.data} state={this.state} />
+        <NewsContent
+          data={this.state.data}
+          state={this.state}
+          image={this.state.image}
+        />
         <Footer state={this.state.footer} />
       </>
     );

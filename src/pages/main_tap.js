@@ -20,11 +20,13 @@ class Main_tap extends Component {
       data: [],
       footer: "main_tap",
       headtag: "맞춤사업",
+      image: [],
     };
   }
 
   componentDidMount() {
     this._getData();
+    this._getImage();
   }
 
   _getData = async () => {
@@ -38,8 +40,18 @@ class Main_tap extends Component {
       if (El.tag) {
         res.data.data[index].tag = El.tag.split(",");
       }
+      return El;
     });
     this.setState({ data: res.data.data });
+  };
+
+  _getImage = async () => {
+    const res = await axios.get("/api/image");
+
+    res.data.data.map((El, index) => {
+      return El;
+    });
+    this.setState({ image: res.data.data });
   };
 
   render() {

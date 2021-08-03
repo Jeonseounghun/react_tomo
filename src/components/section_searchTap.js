@@ -33,6 +33,18 @@ const SearchDetail = (props) => {
       ""
     )
   );
+  const businessListarray = businessList.map((El) => {
+    if (El !== "") {
+      return true;
+    }
+    return El;
+  });
+  const newsListarray = newsList.map((El) => {
+    if (El !== "") {
+      return true;
+    }
+    return El;
+  });
 
   return (
     <>
@@ -57,7 +69,7 @@ const SearchDetail = (props) => {
           </div>
           <div className="search__result">
             {search ? (
-              businessList.length ? (
+              businessListarray.indexOf(true) >= 0 ? (
                 <div className="contents">
                   <div className="content">
                     <div className="content__title">지원사업</div>
@@ -78,7 +90,7 @@ const SearchDetail = (props) => {
               ""
             )}
             {search ? (
-              newsList.length ? (
+              newsListarray.indexOf(true) >= 0 ? (
                 <div className="contents">
                   <div className="content">
                     <div className="content__title">뉴스</div>

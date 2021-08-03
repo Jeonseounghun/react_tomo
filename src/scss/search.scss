@@ -50,13 +50,13 @@ section.search {
 }
 
 section.search .search__container {
-  height: 5rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   width: 90%;
-  height: 2rem;
+
   border-radius: 3rem;
   box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.06);
   margin: 0.8rem 0;
@@ -65,7 +65,7 @@ section.search .search__container {
 
 section.search .search__container input {
   flex: 1;
-  height: 80%;
+  height: 70%;
   margin-right: 0.5rem;
   border: none;
   font-family: NotoSansKR;
@@ -109,6 +109,6 @@ section.search .search__results .search__title {
 }
 
 section.search .search__results .search__result {
-  height: calc(100vh - 13.5rem);
+  height: calc(100vh - 15.5rem);
   overflow: scroll;
 }

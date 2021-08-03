@@ -14,6 +14,7 @@ class Detail extends Component {
     super(props);
     this.state = {
       data: [],
+      image: [],
       footer: "main_tap",
     };
   }
@@ -33,15 +34,15 @@ class Detail extends Component {
       if (El.tag) {
         res.data.data[index].tag = El.tag.split(",");
       }
+      return El;
     });
     this.setState({ data: res.data.data });
   };
-
   render() {
     return (
       <>
         <Headerdetail tap_title={tap_title} />
-        <DetailContents state={this.state.data} />
+        <DetailContents state={this.state.data}  />
         <Footer state={this.state.footer} />
       </>
     );

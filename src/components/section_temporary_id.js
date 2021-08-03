@@ -1,14 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../scss/main.scss";
 import "../scss/section_find_id.scss";
-
-const Back_page = () => {
-  window.history.back();
-};
-
-const LoginPage = () => {
-  window.location.href = "/login";
-};
 
 const TemporaryID = () => {
   return (
@@ -23,12 +16,12 @@ const TemporaryID = () => {
           </div>
           <div className="copy">복사하기</div>
           <div className="login__contain">
-            <div className="login" onClick={LoginPage}>
-              로그인
-            </div>
-            <div className="confirm" onClick={Back_page}>
-              확인
-            </div>
+            <Link to="/login">
+              <div className="login">로그인</div>
+            </Link>
+            <Link to="/login">
+              <div className="confirm">확인</div>
+            </Link>
           </div>
         </div>
       </section>

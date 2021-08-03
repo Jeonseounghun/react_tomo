@@ -33,6 +33,7 @@ class StageDetail extends Component {
       if (El.tag) {
         res.data.data[index].tag = El.tag.split(",");
       }
+      return El;
     });
     this.setState({ data: res.data.data });
   };

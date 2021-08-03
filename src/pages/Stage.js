@@ -32,6 +32,7 @@ class Stage extends Component {
       if (El.udp_date) {
         res.data.data[index].udp_date = El.udp_date.slice(0, 10);
       }
+      return El;
     });
     this.setState({ data: res.data.data });
   };

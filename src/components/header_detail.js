@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../scss/main.scss";
 
 const Back_page = () => {
@@ -18,12 +19,9 @@ const Headerdetail = (props) => {
             <img src={props.tap_title.logo} alt="" />
           </div>
           <div className="search__icon">
-            <i
-              className="fas fa-search"
-              onClick={() => {
-                window.location.href = `/search`;
-              }}
-            ></i>
+            <Link to="/search">
+              <i className="fas fa-search"></i>
+            </Link>
           </div>
         </header>
       ) : (

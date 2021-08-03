@@ -69,18 +69,19 @@ section.login .login__container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0 0 0 0;
 }
 
 section.login .login__container div {
-  border-right: 0.08rem solid #817c7c;
   font-size: 1rem;
   padding: 0 0.8rem;
   font-weight: 700;
   color: black;
 }
 
-section.login .login__container div:last-child {
-  border: none;
+section.login .login__container .find__id,
+section.login .login__container .find__password {
+  border-right: 0.08rem solid #817c7c !important;
 }
 
 section.login .login__yymmdd {

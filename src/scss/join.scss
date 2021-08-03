@@ -93,7 +93,7 @@ section.join_logo {
   position: absolute;
   top: 5rem;
   width: 100%;
-  height: 50vh;
+  height: calc(100vh - 5rem - 15rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +105,7 @@ section.join_logo .join_logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 3;
+  height: 50%;
 }
 
 section.join_logo .join_logo img {
@@ -113,7 +113,7 @@ section.join_logo .join_logo img {
 }
 section.join_logo .text_container {
   width: 100%;
-  flex: 2;
+  height: 50%;
 }
 
 section.join_logo h1 {
@@ -206,6 +206,7 @@ section.join2 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 section.join2 input {
@@ -277,15 +278,13 @@ section.join3 span {
 }
 
 section.join3 .btn {
-  width: 20%;
+  width: 25%;
   height: 2.5rem;
   font-family: NotoSansKR;
   font-size: 0.75rem;
   font-weight: 700;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.58;
-  letter-spacing: -0.48px;
   text-align: center;
   color: #666666;
   border-radius: 0.25rem;
@@ -294,13 +293,14 @@ section.join3 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 section.join3 input {
   border: 0.05rem solid #ededed;
   border-radius: 0.2rem;
   height: 2.5rem;
-  width: 75%;
+  width: 70%;
   margin: 0;
 }
 
@@ -573,4 +573,32 @@ section.join5 .join__content {
 .chech_box_container .container .checkbox.active {
   color: #10e5d5;
   transition: 0.3s;
+}
+
+section.join5 .push_alert,
+section.join5 .email_alert {
+  margin: 0 0 0.8rem 0;
+  width: 100%;
+}
+
+section.join5 .push_alert > span,
+section.join5 .email_alert > span {
+  margin: 0 !important;
+  flex: 1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #333333;
+  padding: 0.2rem 0;
+}
+
+section.join5 .push_alert > i,
+section.join5 .email_alert > i {
+  margin: 0 !important;
+  flex: 0.2;
+  color: #d7d7d7;
+}
+
+section.join5 .push_alert > i.active,
+section.join5 .email_alert > i.active {
+  color: #10e5d5 !important;
 }

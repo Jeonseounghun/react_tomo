@@ -1,34 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../scss/main.scss";
 import "../scss/section_find_id.scss";
-
-const Back_page = () => {
-  window.history.back();
-};
-
-const LoginPage = () => {
-  window.location.href = "/login";
-};
 
 const TemporaryPW = () => {
   return (
     <>
-      <section class="temporary__id show">
-        <div class="temporary__id">
-          <div class="text">
+      <section className="temporary__id show">
+        <div className="temporary__id">
+          <div className="text">
             <span>임시 비밀번호</span>
-            <span class="temporary">epgk87528</span>
+            <span className="temporary">epgk87528</span>
             <br />
             <span>로그인 후 비밀번호를 변경해 주세요.</span>
           </div>
-          <div class="copy">복사하기</div>
-          <div class="login__contain">
-            <div className="login" onClick={LoginPage}>
-              로그인
-            </div>
-            <div className="confirm" onClick={Back_page}>
-              확인
-            </div>
+          <div className="copy">복사하기</div>
+          <div className="login__contain">
+            <Link to="/login">
+              <div className="login">로그인</div>
+            </Link>
+            <Link to="/login">
+              <div className="confirm">확인</div>
+            </Link>
           </div>
         </div>
       </section>

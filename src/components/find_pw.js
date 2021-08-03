@@ -32,8 +32,7 @@ const Find_pw = () => {
           </div>
           <div className="login__yymmdd">
             <span>생년월일</span>
-            <select name="year">
-              <option value="">년도</option>
+            <select name="year" defaultValue="1980">
               <option value="2021">2021년</option>
               <option value="2020">2020년</option>
               <option value="2019">2019년</option>
@@ -75,9 +74,7 @@ const Find_pw = () => {
               <option value="1983">1983년</option>
               <option value="1982">1982년</option>
               <option value="1981">1981년</option>
-              <option value="1980" selected>
-                1980년
-              </option>
+              <option value="1980">1980년</option>
               <option value="1979">1979년</option>
               <option value="1978">1978년</option>
               <option value="1977">1977년</option>
@@ -137,11 +134,8 @@ const Find_pw = () => {
               <option value="1923">1923년</option>
               <option value="1922">1922년</option>
             </select>
-            <select name="month">
-              <option value="">월</option>
-              <option value="1" selected>
-                1월
-              </option>
+            <select name="month" defaultValue="1">
+              <option value="1">1월</option>
               <option value="2">2월</option>
               <option value="3">3월</option>
               <option value="4">4월</option>
@@ -154,11 +148,8 @@ const Find_pw = () => {
               <option value="11">11월</option>
               <option value="12">12월</option>
             </select>
-            <select name="day">
-              <option value="">일</option>
-              <option value="1" selected>
-                1일
-              </option>
+            <select name="day" defaultValue="1">
+              <option value="1">1일</option>
               <option value="2">2일</option>
               <option value="3">3일</option>
               <option value="4">4일</option>

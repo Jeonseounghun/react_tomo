@@ -3,13 +3,12 @@ import "../scss/main.scss";
 import "../scss/main_tap.scss";
 
 const DetailContents = (props) => {
-  console.log(props.state);
   const detailContent = props.state.map((El) =>
     `/main_tap/${El.idx}` === window.location.pathname ? (
       <>
         <section className="detail" key={El.idx}>
           <div className="title">
-            <img alt=""/>
+            <img alt="" />
             {El.title}
           </div>
           <div className="contents">

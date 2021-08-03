@@ -30,6 +30,7 @@ class SearchTap extends Component {
       if (El.tag) {
         res.data.data[index].tag = El.tag.split(",");
       }
+      return El;
     });
     this.setState({ business: res.data.data });
   };
@@ -40,6 +41,7 @@ class SearchTap extends Component {
       if (El.reg_date) {
         res.data.data[index].reg_date = El.reg_date.slice(0, 10);
       }
+      return El;
     });
     this.setState({ news: res.data.data });
   };
