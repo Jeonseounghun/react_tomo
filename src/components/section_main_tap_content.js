@@ -34,7 +34,13 @@ const MainTapContent = (props) => {
 
           <div className="content__Dday">
             <i className="fa-star far"></i>
-            <span>D-8</span>
+            <span>
+              {El.dday >= 0
+                ? El.dday === 0
+                  ? "D-day"
+                  : `D-${El.dday}`
+                : "기한일 넘김"}
+            </span>
           </div>
         </div>
       ));
@@ -66,7 +72,13 @@ const MainTapContent = (props) => {
             </div>
             <div className="content__Dday">
               <i className="fa-star far"></i>
-              <span>D-8</span>
+              <span>
+                {El.dday >= 0
+                  ? El.dday === 0
+                    ? "D-day"
+                    : `D-${El.dday}`
+                  : "기한일 넘김"}
+              </span>
             </div>
           </div>
         ) : (
@@ -101,7 +113,13 @@ const MainTapContent = (props) => {
             </div>
             <div className="content__Dday">
               <i className="fa-star far"></i>
-              <span>D-9</span>
+              <span>
+                {El.dday >= 0
+                  ? El.dday === 0
+                    ? "D-day"
+                    : `D-${El.dday}`
+                  : "기한일 넘김"}
+              </span>
             </div>
           </div>
         ) : (
@@ -136,7 +154,13 @@ const MainTapContent = (props) => {
             </div>
             <div className="content__Dday">
               <i className="fa-star far"></i>
-              <span>D-9</span>
+              <span>
+                {El.dday >= 0
+                  ? El.dday === 0
+                    ? "D-day"
+                    : `D-${El.dday}`
+                  : "기한일 넘김"}
+              </span>
             </div>
           </div>
         ) : (

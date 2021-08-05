@@ -29,7 +29,7 @@ class News extends Component {
 
   _getData = async () => {
     const res = await axios.get("/api/news_data");
-    res.data.data.map((El, index) => {
+    res.data.data.reverse().map((El, index) => {
       if (El.reg_date) {
         res.data.data[index].reg_date = El.reg_date.slice(0, 10);
       }

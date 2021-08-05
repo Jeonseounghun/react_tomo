@@ -32,7 +32,7 @@ class Main_tap extends Component {
   _getData = async () => {
     const res = await axios.get("/api/main_tap_data");
 
-    res.data.data.map((El, index) => {
+    res.data.data.reverse().map((El, index) => {
       if (El.start_day) {
         res.data.data[index].start_day = El.start_day.slice(0, 10);
         res.data.data[index].end_day = El.end_day.slice(0, 10);
@@ -40,6 +40,11 @@ class Main_tap extends Component {
       if (El.tag) {
         res.data.data[index].tag = El.tag.split(",");
       }
+      var today = new Date();
+      var dday = new Date(res.data.data[index].end_day);
+      var gap = dday.getTime() - today.getTime();
+      var result = Math.ceil(gap / (1000 * 60 * 60 * 24));
+      El.dday = result;
       return El;
     });
     this.setState({ data: res.data.data });
