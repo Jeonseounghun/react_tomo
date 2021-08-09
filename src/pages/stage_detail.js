@@ -26,15 +26,12 @@ class StageDetail extends Component {
     const res = await axios.get("/api/stage_data");
 
     res.data.data.map((El, index) => {
-      if (El.start_day) {
-        res.data.data[index].start_day = El.start_day.slice(0, 10);
-        res.data.data[index].end_day = El.end_day.slice(0, 10);
-      }
-      if (El.tag) {
-        res.data.data[index].tag = El.tag.split(",");
+      if (El.udp_date) {
+        res.data.data[index].udp_date = El.udp_date.slice(0, 10);
       }
       return El;
     });
+
     this.setState({ data: res.data.data });
   };
 

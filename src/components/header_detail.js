@@ -35,6 +35,15 @@ const Headerdetail = (props) => {
           >
             <i className="fas fa-arrow-left"></i>
           </div>
+          {window.location.pathname.includes("main_tap/") ? (
+            <div class="contents__contain">
+              <div class="content__star">
+                <i class="fa-star far" aria-hidden="true"></i>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
         </header>
       )}
     </>

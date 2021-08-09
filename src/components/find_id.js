@@ -13,7 +13,7 @@ const Find_id = () => {
   return (
     <>
       <Headerdetail tap_title={tap_title} />
-      <section className="login">
+      <section className="login_find">
         <form action="">
           <div className="login__title">
             <span> 가입자 정보를 입력해주세요.</span>

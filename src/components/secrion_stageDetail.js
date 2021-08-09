@@ -4,7 +4,6 @@ import "../scss/stage.scss";
 import image from "../images/데이터하이브.PNG";
 
 const StageDetailContent = (props) => {
-  console.log(props.state);
   const detailContent = props.state.map((El) =>
     `/stage/${El.idx}` === window.location.pathname ? (
       <>
@@ -43,12 +42,39 @@ const StageDetailContent = (props) => {
           >
             <span>홈페이지 이동</span>
           </div>
-          <div className="stage_content">
-            <div className="contents">
-              <div className="period">
+          <div class="stage_content">
+            <div class="contents_container">
+              <div class="period">
                 {El.udp_date ? El.udp_date : "2020-01-01"}
               </div>
-              <div className="title">{El.title}</div>
+              <div class="title">{El.title}</div>
+              <div class="contents__content">
+                컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.컨텐츠
+                영역입니다.컨텐츠 영역입니다.컨텐츠 영역입니다.
+              </div>
             </div>
           </div>
         </section>

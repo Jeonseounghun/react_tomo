@@ -585,10 +585,11 @@ section.join5 .push_alert > span,
 section.join5 .email_alert > span {
   margin: 0 !important;
   flex: 1;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #333333;
   padding: 0.2rem 0;
+  transition: 0.3s;
 }
 
 section.join5 .push_alert > i,
@@ -596,9 +597,13 @@ section.join5 .email_alert > i {
   margin: 0 !important;
   flex: 0.2;
   color: #d7d7d7;
+  font-size: 2rem;
+  transition: 0.3s;
 }
 
 section.join5 .push_alert > i.active,
 section.join5 .email_alert > i.active {
   color: #10e5d5 !important;
+  font-size: 2rem;
+  transition: 0.3s;
 }

@@ -11,7 +11,8 @@ section.top_menu.active {
   top: 5rem;
   width: 100%;
   background-color: white;
-  z-index: 9;
+  z-index: 8;
+  box-shadow: rgb(0 0 0 / 8%) 0 -0.2rem 1.5rem;
 }
 
 section.top_menu ul {
@@ -25,7 +26,7 @@ section.top_menu ul {
 
 section.top_menu ul li {
   text-align: center;
-  padding: 0.093rem 1.3437rem;
+  padding: 0.093rem 1rem;
   padding-bottom: 0.5rem;
   transition: 0.3s;
   border-bottom: 0.01625rem solid white;
@@ -33,25 +34,23 @@ section.top_menu ul li {
 
 section.top_menu ul li.active {
   border-bottom: 0.1625rem solid #10e5d5;
+
   transition: 0.3s;
 }
 
 section.top_menu ul li.active span {
   color: #10e5d5;
   transition: 0.3s;
+  font-weight: 700;
 }
 
 section.top_menu ul li span {
   font-family: NotoSansKR;
-  font-size: 0.75rem;
-  font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.58;
-  letter-spacing: -0.48px;
-  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center;
   color: #999999;
-  width: 4.025rem;
+  width: 100%;
 }
 
 /* section contents_list */
@@ -151,7 +150,7 @@ section.filter .filter__containers.active .filter__icon {
 section.detail {
   position: absolute;
   width: 100%;
-  top: 5rem;
+  top: 3.5rem;
   height: 32rem;
 
   overflow: hidden;
@@ -253,8 +252,8 @@ section.detail .contents > div:last-child > span {
 section.Board {
   position: absolute;
   width: 100%;
-  top: calc(5rem + 32rem);
-  height: calc(100vh - 5rem - 32rem - 4rem);
+  top: calc(3.5rem + 32rem);
+  height: calc(100vh - 3.5rem - 32rem - 4rem);
   overflow: scroll;
 }
 
@@ -325,21 +324,17 @@ section.Business .contents .content__Dday {
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  flex: 2;
+  flex: 1.2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 section.Business .contents .content__Dday i {
-  position: relative;
-  top: -1.5rem;
 }
 
 section.Business .contents .content__Dday span {
-  position: relative;
-  bottom: -1rem;
   color: red;
 }
 

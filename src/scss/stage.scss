@@ -163,7 +163,11 @@ section.company_detail .title .view_like {
 section.company_detail .title .view_like .view {
   margin-right: 1rem;
 }
-
+section.content_container .contents .content .info_contain .view_like .view i,
+section.content_container .contents .content .info_contain .view_like .like i {
+  color: #bdbdbd;
+  margin-right: 0.25rem;
+}
 section.company_detail .company_info {
   display: flex;
   justify-content: space-between;
@@ -189,13 +193,14 @@ section.company_detail .company_info div > span:last-child {
 section.company_detail .btn {
   padding: 0.5rem 0 1rem 0;
   border-bottom: 0.1625rem solid #ededed;
+  display: flex;
+  justify-content: center;
 }
 
 section.company_detail .btn span {
   text-align: center;
   background-color: #f5f5f5;
   color: #999999;
-  margin: 1rem 0;
   font-family: NotoSansKR;
   font-size: 1rem;
   font-weight: bold;
@@ -207,9 +212,9 @@ section.company_detail .btn span {
 
 /* ################################################### */
 section.company_detail .stage_content {
-  border-bottom: 0.0625rem solid #ededed;
+  height: calc(100vh - 31rem);
 }
-section.company_detail .stage_content .contents {
+section.company_detail .stage_content .contents_container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -223,4 +228,10 @@ section.company_detail .stage_content .period {
 
 section.company_detail .stage_content .title {
   padding: 0.1rem 0.5rem 0.5rem 1rem;
+  border-bottom: 0.0625rem solid #ededed;
+}
+
+section.company_detail .stage_content .contents__content {
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
 }

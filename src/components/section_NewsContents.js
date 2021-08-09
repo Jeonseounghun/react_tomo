@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../scss/news.scss";
+import "../scss/main.scss";
 import image2 from "../images/1626316846119rain-275317_960_720.jpg";
 
 const NewsContent = (props) => {
@@ -121,6 +122,7 @@ const NewsContent = (props) => {
       </section>
 
       <section className="contents_list news active" id="startupNews">
+        <div class="bd"></div>
         {newsContent}
       </section>
     </>

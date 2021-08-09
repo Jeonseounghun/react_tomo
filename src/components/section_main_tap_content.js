@@ -7,44 +7,14 @@ const MainTapContent = (props) => {
   const [headtag, setHeadtag] = useState(props.headtag);
   const suppoertDatas = props.data;
   let suppoertData = [];
-
+  setTimeout(() => {
+    const contentDday = document.querySelectorAll(".content__Dday");
+    contentDday.forEach((El) => {
+      const contentHeight = El.previousElementSibling.clientHeight;
+      El.style.height = contentHeight + "px";
+    });
+  }, 1);
   switch (headtag) {
-    case "전체사업":
-      suppoertData = suppoertDatas.map((El) => (
-        <div className="contents" key={El.idx}>
-          <div className="content">
-            <Link to={"/main_tap/" + El.idx}>
-              <div className="content__title">{El.title}</div>
-              <div className="content__period">
-                {El.start_day} ~ {El.end_day}
-              </div>
-              <div className="content__period">중소벤처기업부</div>
-
-              <div className="content__tags">
-                {El.tag ? (
-                  El.tag.map((El) => <span className="content__tag">{El}</span>)
-                ) : (
-                  <span className="content__tag">태그없음</span>
-                )}
-
-                <div className="content__money">{El.sup_pay}</div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="content__Dday">
-            <i className="fa-star far"></i>
-            <span>
-              {El.dday >= 0
-                ? El.dday === 0
-                  ? "D-day"
-                  : `D-${El.dday}`
-                : "기한일 넘김"}
-            </span>
-          </div>
-        </div>
-      ));
-      break;
     case "관심사업":
       suppoertData = suppoertDatas.map((El) =>
         El.sup_type === "사업화" ? (
@@ -77,7 +47,7 @@ const MainTapContent = (props) => {
                   ? El.dday === 0
                     ? "D-day"
                     : `D-${El.dday}`
-                  : "기한일 넘김"}
+                  : "OVER"}
               </span>
             </div>
           </div>
@@ -85,6 +55,44 @@ const MainTapContent = (props) => {
           ""
         )
       );
+
+      break;
+    case "전체사업":
+      suppoertData = suppoertDatas.map((El, i) => (
+        <div className="contents" key={El.idx}>
+          <div className="content">
+            <Link to={"/main_tap/" + El.idx}>
+              <div className="content__title">{El.title}</div>
+              <div className="content__period">
+                {El.start_day} ~ {El.end_day}
+              </div>
+              <div className="content__period">중소벤처기업부</div>
+
+              <div className="content__tags">
+                {El.tag ? (
+                  El.tag.map((El) => <span className="content__tag">{El}</span>)
+                ) : (
+                  <span className="content__tag">태그없음</span>
+                )}
+
+                <div className="content__money">{El.sup_pay}</div>
+              </div>
+            </Link>
+          </div>
+
+          <div className={"content__Dday " + "num" + i}>
+            <i className="fa-star far"></i>
+            <span>
+              {El.dday >= 0
+                ? El.dday === 0
+                  ? "D-day"
+                  : `D-${El.dday}`
+                : "OVER"}
+            </span>
+          </div>
+        </div>
+      ));
+
       break;
     case "추천사업":
       suppoertData = suppoertDatas.map((El) =>
@@ -118,7 +126,7 @@ const MainTapContent = (props) => {
                   ? El.dday === 0
                     ? "D-day"
                     : `D-${El.dday}`
-                  : "기한일 넘김"}
+                  : "OVER"}
               </span>
             </div>
           </div>
@@ -159,7 +167,7 @@ const MainTapContent = (props) => {
                   ? El.dday === 0
                     ? "D-day"
                     : `D-${El.dday}`
-                  : "기한일 넘김"}
+                  : "OVER"}
               </span>
             </div>
           </div>

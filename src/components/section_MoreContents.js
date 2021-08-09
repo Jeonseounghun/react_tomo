@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../scss/more.scss";
 import "../scss/main.scss";
 import logo from "../images/logo.svg";
@@ -382,7 +383,7 @@ const MoreContents = (props) => {
       return (
         <>
           <Headerdetail tap_title={info} />
-          <section className="login">
+          <section className="login_find">
             <form action="">
               <div className="login__name">
                 <input type="text" placeholder="새 비밀번호" />
@@ -402,22 +403,17 @@ const MoreContents = (props) => {
               </div>
 
               <div className="login__contain">
-                <div
-                  className="login"
+                <Link to="/login">
+                  <div className="login">로그인</div>
+                </Link>
+                <Link
+                  to="/more"
                   onClick={() => {
-                    window.location.href = "/login";
+                    setChangePW("");
                   }}
                 >
-                  로그인
-                </div>
-                <div
-                  className="confirm"
-                  onClick={() => {
-                    setChangePW("unshow");
-                  }}
-                >
-                  확인
-                </div>
+                  <div className="confirm">확인</div>
+                </Link>
               </div>
             </div>
           </section>
