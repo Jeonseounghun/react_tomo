@@ -129,7 +129,6 @@ section.company_detail {
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  border-bottom: 0.0625rem solid #ededed;
 
   .slide {
     width: 100%;
@@ -150,7 +149,8 @@ section.company_detail .title {
   justify-content: space-between;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
+  color: #333;
 }
 
 section.company_detail .title .view_like {
@@ -163,8 +163,8 @@ section.company_detail .title .view_like {
 section.company_detail .title .view_like .view {
   margin-right: 1rem;
 }
-section.content_container .contents .content .info_contain .view_like .view i,
-section.content_container .contents .content .info_contain .view_like .like i {
+section.company_detail .title .view_like .view i,
+section.company_detail .title .view_like .like i {
   color: #bdbdbd;
   margin-right: 0.25rem;
 }
@@ -185,10 +185,16 @@ section.company_detail .company_info div {
 section.company_detail .company_info div > span:first-child {
   flex: 2;
   padding-bottom: 0.5rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #666;
 }
 
 section.company_detail .company_info div > span:last-child {
   flex: 8;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #333;
 }
 section.company_detail .btn {
   padding: 0.5rem 0 1rem 0;
@@ -199,15 +205,13 @@ section.company_detail .btn {
 
 section.company_detail .btn span {
   text-align: center;
-  background-color: #f5f5f5;
-  color: #999999;
+  background-color: #ededed;
+  color: #666;
   font-family: NotoSansKR;
-  font-size: 1rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
   border-radius: 0.25rem;
+  padding: 0.625rem 1rem;
 }
 
 /* ################################################### */
@@ -222,8 +226,9 @@ section.company_detail .stage_content .contents_container {
 }
 
 section.company_detail .stage_content .period {
-  font-size: 0.7rem;
-  padding: 0.5rem 0.5rem 0 1rem;
+  font-size: 0.75rem;
+  padding: 0.875rem 0.5rem 0 1rem;
+  color: #666;
 }
 
 section.company_detail .stage_content .title {
@@ -233,5 +238,7 @@ section.company_detail .stage_content .title {
 
 section.company_detail .stage_content .contents__content {
   padding: 1rem 1rem 1rem 1rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
 }

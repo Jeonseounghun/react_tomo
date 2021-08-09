@@ -40,6 +40,33 @@ function infoCheck(e) {
 
 const Join = () => {
   const [joinNum, setJoinNum] = useState(1);
+  const [user_e_name, setEmail] = useState("");
+  const [user_e_pw, setPw] = useState("");
+  const handlChange = (e) => {
+    setEmail(e.target.value);
+    if (e.target.name === "email") {
+      setEmail(e.target.value);
+    } else if (e.target.name === "email") {
+      setPw(e.target.value);
+    }
+  };
+  const onclick = () => {
+    const textbox = {
+      email: user_e_name,
+    };
+    fetch("http://localhost:5000/api/member", {
+      method: "post", //통신방법
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(textbox),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        setEmail(json.text);
+      });
+  };
   return (
     <>
       <Headerdetail tap_title={tap_title} />
@@ -405,8 +432,10 @@ const Join = () => {
               <span>*</span>
             </div>
             <div>
-              <input type="text" />
-              <div className="btn">중복확인</div>
+              <input type="text" name="email" onChange={handlChange} />
+              <div className="btn" onClick={onclick}>
+                중복확인
+              </div>
             </div>
             <div className="error">이미 사용중인 이메일 주소입니다.</div>
           </div>

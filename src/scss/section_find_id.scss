@@ -33,8 +33,10 @@ section.login_find > form > div input {
 }
 
 section.login_find > form > div input::placeholder {
-  font-size: 1rem;
-  padding-left: 1px;
+  font-size: 0.875rem;
+  padding-left: 0.875rem;
+  font-weight: 400;
+  color: #999;
 }
 
 section.login_find .login__title {
