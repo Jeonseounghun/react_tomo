@@ -120,9 +120,8 @@ const NewsContent = (props) => {
           </div>
         </div>
       </section>
-
+      <div class="bd"></div>
       <section className="contents_list news active" id="startupNews">
-        <div class="bd"></div>
         {newsContent}
       </section>
     </>
