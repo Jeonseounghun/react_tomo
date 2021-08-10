@@ -238,6 +238,19 @@ section.join2 .error.active {
   color: #dc3545;
 }
 
+section.join2 .error.pass {
+  display: block;
+  font-family: NotoSansKR;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.9;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: black;
+}
+
 /* 회원가입 3첫번쨰 */
 /* ########################################################## */
 
