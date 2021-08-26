@@ -17,6 +17,15 @@ function changeCheck(e) {
     e.target.parentElement.classList.add("active");
   }
 }
+
+//이메일 정규식 체크
+function email_checking(email) {
+  var reg =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+  return reg.test(email);
+}
+
 function att_tag() {
   let result = "";
   const tagContain = document.querySelectorAll(".checkbox");
@@ -86,7 +95,7 @@ class Join extends Component {
     this.state = {
       member_data: "",
       joinNum: 1,
-      email_check: true,
+      email_check: "",
       pwd1_check: true,
       pwd2_check: true,
       email: "",
@@ -107,7 +116,7 @@ class Join extends Component {
       main_work: "",
       int_work1: "",
       int_work2: "",
-      birthday: "",
+      birthday: "19800101",
       company_birth: "",
       att_work: "",
       reg_date: "",
@@ -167,7 +176,7 @@ class Join extends Component {
       case "userdd":
         if (e.target.name === "userYY") {
           this.setState({ userYY: e.target.value });
-        } else if (e.target.name === "userYY") {
+        } else if (e.target.name === "userMM") {
           this.setState({ userMM: e.target.value });
         } else {
           this.setState({ userdd: e.target.value });
@@ -673,19 +682,27 @@ class Join extends Component {
                 <div
                   className={this.state.email_check ? "btn pass" : "btn active"}
                   onClick={(e) => {
-                    this.setState({ email_check: true });
-                    this.state.data.forEach((El) => {
-                      if (El.email === this.state.email) {
-                        this.setState({ email_check: false });
-                      }
-                    });
+                    if (email_checking(this.state.email)) {
+                      this.setState({ email_check: true });
+                      this.state.data.forEach((El) => {
+                        if (El.email === this.state.email) {
+                          this.setState({ email_check: false });
+                        }
+                      });
+                    }
                   }}
                 >
                   중복확인
                 </div>
               </div>
               <div
-                className={this.state.email_check ? "error" : "error active"}
+                className={
+                  this.state.email_check === ""
+                    ? this.state.email_check === true
+                      ? "error"
+                      : "error"
+                    : "error active"
+                }
               >
                 {this.state.email_check
                   ? "사용가능한 이메일 주소입니다."
@@ -912,15 +929,15 @@ class Join extends Component {
                 onChange={this.handlChange}
                 name="userMM"
               >
-                <option value="1">1월</option>
-                <option value="2">2월</option>
-                <option value="3">3월</option>
-                <option value="4">4월</option>
-                <option value="5">5월</option>
-                <option value="6">6월</option>
-                <option value="7">7월</option>
-                <option value="8">8월</option>
-                <option value="9">9월</option>
+                <option value="01">1월</option>
+                <option value="02">2월</option>
+                <option value="03">3월</option>
+                <option value="04">4월</option>
+                <option value="05">5월</option>
+                <option value="06">6월</option>
+                <option value="07">7월</option>
+                <option value="08">8월</option>
+                <option value="09">9월</option>
                 <option value="10">10월</option>
                 <option value="11">11월</option>
                 <option value="12">12월</option>
@@ -931,15 +948,15 @@ class Join extends Component {
                 onChange={this.handlChange}
                 name="userdd"
               >
-                <option value="1">1일</option>
-                <option value="2">2일</option>
-                <option value="3">3일</option>
-                <option value="4">4일</option>
-                <option value="5">5일</option>
-                <option value="6">6일</option>
-                <option value="7">7일</option>
-                <option value="8">8일</option>
-                <option value="9">9일</option>
+                <option value="01">1일</option>
+                <option value="02">2일</option>
+                <option value="03">3일</option>
+                <option value="04">4일</option>
+                <option value="05">5일</option>
+                <option value="06">6일</option>
+                <option value="07">7일</option>
+                <option value="08">8일</option>
+                <option value="09">9일</option>
                 <option value="10">10일</option>
                 <option value="11">11일</option>
                 <option value="12">12일</option>
@@ -1213,7 +1230,7 @@ class Join extends Component {
                 onChange={this.handlChange}
               >
                 <option value="default">주업종*</option>
-                <option value="제조업">제조업</option>
+
                 <option value="제조업">제조업</option>
                 <option value="농업/어업/광업">농업/어업/광업</option>
                 <option value="건설업">건설업</option>
@@ -1234,7 +1251,7 @@ class Join extends Component {
                 onChange={this.handlChange}
               >
                 <option value="default">관심업종1</option>
-                <option value="제조업">제조업</option>
+
                 <option value="제조업">제조업</option>
                 <option value="농업/어업/광업">농업/어업/광업</option>
                 <option value="건설업">건설업</option>
@@ -1255,7 +1272,7 @@ class Join extends Component {
                 onChange={this.handlChange}
               >
                 <option value="default">관심업종2</option>
-                <option value="제조업">제조업</option>
+
                 <option value="제조업">제조업</option>
                 <option value="농업/어업/광업">농업/어업/광업</option>
                 <option value="건설업">건설업</option>
@@ -1549,50 +1566,48 @@ class Join extends Component {
         <section
           className={"submit " + (this.state.joinNum === 5 ? "end" : "")}
           onClick={() => {
-            if (this.state.joinNum === 5) {
-              this.setState({ att_work: att_tag() });
-              this.setState({ reg_date: today_time() });
-              this.setState({ udp_date: today_time() });
-              setTimeout(() => {
-                console.log(this.state);
-                this.send_info();
-              }, 2000);
+            // this.setState({ joinNum: this.state.joinNum + 1 });
+            if (this.state.joinNum >= 1 && this.state.joinNum < 6) {
+              if (this.state.joinNum === 1) {
+                const condition1 = document.querySelector(".condition1");
+                const condition2 = document.querySelector(".condition2");
+                if (
+                  condition1.childNodes[1].classList.contains("active") &&
+                  condition2.childNodes[1].classList.contains("active")
+                ) {
+                  this.setState({ joinNum: this.state.joinNum + 1 });
+                } else {
+                  alert("모두 동의해 주세요");
+                }
+              } else if (this.state.joinNum === 2) {
+                if (this.state.email_check) {
+                  if (CheckPass(this.state.pwd1)) {
+                    if (this.state.pwd1 === this.state.pwd2) {
+                      this.setState({ joinNum: this.state.joinNum + 1 });
+                    } else {
+                      this.setState({ pwd2_check: false });
+                    }
+                  } else {
+                    this.setState({ pwd1_check: false });
+                  }
+                } else {
+                  alert("이메일 중복확인이 필요합니다.");
+                }
+              } else if (this.state.joinNum === 3) {
+                this.setState({ joinNum: this.state.joinNum + 1 });
+              } else if (this.state.joinNum === 4) {
+                this.setState({ joinNum: this.state.joinNum + 1 });
+              } else if (this.state.joinNum === 5) {
+                this.setState({ att_work: att_tag() });
+                this.setState({ reg_date: today_time() });
+                this.setState({ udp_date: today_time() });
+                setTimeout(() => {
+                  console.log(this.state);
+                  this.send_info();
+                }, 1000);
+                window.location.href = "/login";
+              }
             }
-            this.setState({ joinNum: this.state.joinNum + 1 });
-            //   if (this.state.joinNum >= 1 && this.state.joinNum < 5) {
-            //     if (this.state.joinNum === 1) {
-            //       const condition1 = document.querySelector(".condition1");
-            //       const condition2 = document.querySelector(".condition2");
-            //       if (
-            //         condition1.childNodes[1].classList.contains("active") &&
-            //         condition2.childNodes[1].classList.contains("active")
-            //       ) {
-            //         this.setState({ joinNum: this.state.joinNum + 1 });
-            //       } else {
-            //         alert("모두 동의해 주세요");
-            //       }
-            //     } else if (this.state.joinNum === 2) {
-            //       if (this.state.email_check) {
-            //         if (CheckPass(this.state.pwd1)) {
-            //           if (this.state.pwd1 === this.state.pwd2) {
-            //             this.setState({ joinNum: this.state.joinNum + 1 });
-            //           } else {
-            //             this.setState({ pwd2_check: false });
-            //           }
-            //         } else {
-            //           this.setState({ pwd1_check: false });
-            //         }
-            //       } else {
-            //         alert("이메일 중복확인이 필요합니다.");
-            //       }
-            //     } else if (this.state.joinNum === 3) {
-            //       this.setState({ joinNum: this.state.joinNum + 1 });
-            //     } else if (this.state.joinNum === 4) {
-            //       this.setState({ joinNum: this.state.joinNum + 1 });
-            //     }
-            //   } else {
-            //     to_main_tap();
-            //   }
           }}
         >
           <span>{this.state.joinNum === 5 ? "회원가입 완료" : "다음"}</span>

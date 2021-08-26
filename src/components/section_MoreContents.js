@@ -27,7 +27,7 @@ const MoreContents = (props) => {
     case "공지사항":
       return (
         <>
-          <Headerdetail tap_title={info} />
+          <Headerdetail setMoreContent={setMoreContent} tap_title={info} />
           <section className="more_list">
             <div className="container_box">
               <div className="content">
@@ -72,7 +72,7 @@ const MoreContents = (props) => {
     case "나의 정보 변경":
       return (
         <>
-          <Headerdetail tap_title={info} />
+          <Headerdetail setMoreContent={setMoreContent} tap_title={info} />
           <section className="member_info">
             <div
               className="profile_img"
@@ -382,7 +382,7 @@ const MoreContents = (props) => {
     case "비밀번호 변경":
       return (
         <>
-          <Headerdetail tap_title={info} />
+          <Headerdetail setMoreContent={setMoreContent} tap_title={info} />
           <section className="login_find">
             <form action="">
               <div className="login__name">
@@ -430,7 +430,7 @@ const MoreContents = (props) => {
     case "자주 묻는 질문":
       return (
         <>
-          <Headerdetail tap_title={info} />
+          <Headerdetail setMoreContent={setMoreContent} tap_title={info} />
           <section className="more_list">
             <div className="container_box">
               <div className="content">
@@ -490,7 +490,7 @@ const MoreContents = (props) => {
     case "이용약관":
       return (
         <>
-          <Headerdetail tap_title={info} />
+          <Headerdetail setMoreContent={setMoreContent} tap_title={info} />
           <section className="more_contents">
             <h1>제1장 총칙</h1>
             <h2>제1조(목적)</h2>
@@ -503,7 +503,7 @@ const MoreContents = (props) => {
     case "개인정보 처리방침":
       return (
         <>
-          <Headerdetail tap_title={info} />
+          <Headerdetail setMoreContent={setMoreContent} tap_title={info} />
           <section className="more_contents">
             <h1>제1장 총칙</h1>
             <h2>제1조(목적)</h2>

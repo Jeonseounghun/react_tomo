@@ -6,10 +6,6 @@ const Back_page = () => {
   window.history.back();
 };
 
-const Back_more = () => {
-  window.location.href = `./more`;
-};
-
 const Headerdetail = (props) => {
   return (
     <>
@@ -30,7 +26,7 @@ const Headerdetail = (props) => {
           <div
             className="back_arrow"
             onClick={() => {
-              window.location.pathname === "/more" ? Back_more() : Back_page();
+              props.setMoreContent ? props.setMoreContent("more") : Back_page();
             }}
           >
             <i className="fas fa-arrow-left"></i>

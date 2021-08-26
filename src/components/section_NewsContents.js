@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../scss/news.scss";
 import "../scss/main.scss";
-import image2 from "../images/1626316846119rain-275317_960_720.jpg";
+import image2 from "../images/logo.png";
 
 const NewsContent = (props) => {
   const [category, setCategory] = useState(props.state.category);
@@ -10,7 +10,7 @@ const NewsContent = (props) => {
     category === El.category ? (
       <div className="news_contents">
         <div className="title">
-          <span>{El.press + " " + El.reg_date}</span>
+          <span>{El.content_priod}</span>
           <div className="icon">
             <i className="fa-star far"></i>
           </div>
@@ -21,11 +21,11 @@ const NewsContent = (props) => {
           }}
         >
           <div className="contents_img">
-            <img src={image2} alt="" />
+            <img src={El.content_img ? El.content_img : image2} alt="" />
           </div>
           <div className="content">
-            <div className="content__title">{El.title}</div>
-            <div className="content__summary">{El.content}</div>
+            <div className="content__title">{El.content_title}</div>
+            <div className="content__summary">{El.content_sumary}....</div>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@ const NewsContent = (props) => {
       </section>
       <div class="bd"></div>
       <section className="contents_list news active" id="startupNews">
-        {newsContent}
+        {!props.status ? newsContent : "로딩중"}
       </section>
     </>
   );
