@@ -7,31 +7,29 @@ const NewsContent = (props) => {
   const [category, setCategory] = useState(props.state.category);
   const newsContents = props.data;
   const newsContent = newsContents.map((El) =>
-    category === El.category ? (
-      <div className="news_contents">
-        <div className="title">
-          <span>{El.content_priod}</span>
-          <div className="icon">
-            <i className="fa-star far"></i>
-          </div>
-        </div>
-        <div
-          onClick={() => {
-            window.location.href = `${El.link}`;
-          }}
-        >
-          <div className="contents_img">
-            <img src={El.content_img ? El.content_img : image2} alt="" />
-          </div>
-          <div className="content">
-            <div className="content__title">{El.content_title}</div>
-            <div className="content__summary">{El.content_sumary}....</div>
-          </div>
+  (El.categori === category ?
+    <div className="news_contents">
+      <div className="title">
+        <span>{El.period}</span>
+        <div className="icon">
+          <i className="fa-star far"></i>
         </div>
       </div>
-    ) : (
-      ""
-    )
+      <div
+        onClick={() => {
+          window.location.href = `${El.link}`;
+        }}
+      >
+        <div className="contents_img">
+          <img src={El.img ? El.img : image2} alt="" />
+        </div>
+        <div className="content">
+          <div className="content__title">{El.title}</div>
+          <div className="content__summary">{El.content}....</div>
+        </div>
+      </div>
+    </div> : ""
+  )
   );
 
   return (

@@ -8,7 +8,7 @@ module.exports = function (app) {
     })
   );
   app.use(
-    createProxyMiddleware("/archives/", {
+    createProxyMiddleware("/startup", {
       target: "https://platum.kr/",
       changeOrigin: true,
     })
