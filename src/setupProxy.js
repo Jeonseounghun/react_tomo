@@ -13,4 +13,10 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
+  app.use(
+    createProxyMiddleware("/see", {
+      target: "https://www.bizinfo.go.kr/",
+      changeOrigin: true,
+    })
+  );
 };

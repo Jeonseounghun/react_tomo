@@ -49,6 +49,17 @@ const NewsContent = (props) => {
       <section className="categori active">
         <div className="icon__constainer">
           <div
+            className={"icon " + (category === "스타트업뉴스" ? "active" : "")}
+            onClick={() => {
+              setCategory("스타트업뉴스");
+            }}
+          >
+            <div>
+              <i className="fas fa-newspaper"></i>
+            </div>
+            <span>스타트업뉴스</span>
+          </div>
+          <div
             className={"icon " + (category === "지원사업" ? "active" : "")}
             onClick={() => {
               setCategory("지원사업");
@@ -81,17 +92,6 @@ const NewsContent = (props) => {
               <i className="fas fa-clipboard-list"></i>
             </div>
             <span>실적</span>
-          </div>
-          <div
-            className={"icon " + (category === "스타트업뉴스" ? "active" : "")}
-            onClick={() => {
-              setCategory("스타트업뉴스");
-            }}
-          >
-            <div>
-              <i className="fas fa-newspaper"></i>
-            </div>
-            <span>스타트업뉴스</span>
           </div>
           <div
             className={"icon " + (category === "인터뷰" ? "active" : "")}

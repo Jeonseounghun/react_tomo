@@ -7,7 +7,16 @@ import MainTapContent from "../components/section_main_tap_content";
 import Footer from "../components/section_footer";
 import Filter from "../components/section_filter";
 import Headerdetail from "../components/header_detail";
+import cheerio from "cheerio";
 
+const getHtml = async (url) => {
+  try {
+
+    return await axios.get(url);
+  } catch (error) {
+    console.error(error);
+  }
+};
 const tap_title = {
   title: "아이디찾기",
   logo: logo,
@@ -26,10 +35,21 @@ class Main_tap extends Component {
 
   componentDidMount() {
     this._getData();
-    this._getImage();
   }
-
+  edit_period = (content) => {
+    content = content.replace(/\t/g, '');
+    content = content.replace(/\n/g, '');
+    content = content.replace(/ /g, "")
+    return content
+  }
+  edit_period2 = (content) => {
+    content = content.replace(/\t/g, '');
+    content = content.replace(/\n/g, '');
+    return content
+  }
   _getData = async () => {
+
+
     const res = await axios.get("/api/main_tap_data");
 
     res.data.data.reverse().map((El, index) => {
@@ -47,17 +67,101 @@ class Main_tap extends Component {
       El.dday = result;
       return El;
     });
+
     this.setState({ data: res.data.data });
+    // setTimeout(() => {
+    //   let datalist = []
+    //   console.log("스타트")
+    //   getHtml("/see/seea/selectSEEA100.do?menuId=80001001001").then((html) => {
+    //     const $ = cheerio.load(html.data);
+    //     const body = $(".bbsStyle1").find("tr").find(".txtAgL")
+    //     const firstsrc = $(body[0]).find("a").attr("onclick")
+    //     const firstNum = firstsrc.slice(32, 37)
+    //     let i = 0
+    //     let it = setInterval(() => {
+    //       if (i++ < 100) {
+    //         getHtml(`/see/seea/selectSEEA140Detail.do?pblancId=PBLN_0000000000${firstNum - i}`).then((html2) => {
+    //           const $2 = cheerio.load(html2.data)
+
+    //           if ($2.text().indexOf("잘못된") === -1) {
+
+    //             let date = new Date()
+    //             let month = date.getMonth() + 1;
+    //             let day = date.getDate();
+    //             let hour = date.getHours();
+    //             let minute = date.getMinutes();
+    //             let second = date.getSeconds();
+
+    //             month = month >= 10 ? month : '0' + month;
+    //             day = day >= 10 ? day : '0' + day;
+    //             hour = hour >= 10 ? hour : '0' + hour;
+    //             minute = minute >= 10 ? minute : '0' + minute;
+    //             second = second >= 10 ? second : '0' + second;
+    //             let real_time = date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+    //             console.log(real_time)
+
+    //             const textbox = {
+    //               idx: "",
+    //               title: $2("a#pNm").text(),
+    //               content: this.edit_period2($2("div.contBox")[0].children[0].data),
+    //               status: "N",
+    //               gubun: "N",
+    //               area: "전국",
+    //               work: "제한없음",
+    //               sup_type: "사업화",
+    //               sup_pay: "미정",
+    //               sup_condition: "제한없음",
+    //               start_day: this.edit_period($2("table.infoTable").find("tbody").find("td")[1].children[0].data.trim()).slice(0, 10),
+    //               end_day: this.edit_period($2("table.infoTable").find("tbody").find("td")[1].children[0].data.trim()).slice(-10),
+    //               time: ":",
+    //               all_day_yn: "N",
+    //               homepage: $2("div.contBox").find("a").attr("href"),
+    //               recommend: 50,
+    //               tag: "미정",
+    //               reg_id: "admin",
+    //               reg_date: real_time,
+    //               udp_date: real_time,
+    //               use_yn: "N",
+    //               view_cnt: 0,
+    //               udp_id: "admin",
+    //               att_cnt: "",
+    //             };
+    //             if ((this.state.data.filter((datalist) => { return datalist.title === textbox.title })).length >= 1 ? false : true) {
+    //               datalist.push(textbox)
+
+    //               console.log("스캔2")
+    //             } else {
+    //               console.log("중복")
+    //             }
+    //           }
+    //         })
+
+    //       } else {
+    //         this.send_info(datalist)
+    //         clearInterval(it)
+    //       }
+    //     }, 1000);
+
+    //   })
+
+    // }, 1000)
+
+  };
+  send_info = (textbox) => {
+    console.log(textbox)
+    fetch("http://localhost:5000/api/main_tap_data2", {
+      method: "post", //통신방법
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(textbox),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("전송성공")
+      });
   };
 
-  _getImage = async () => {
-    const res = await axios.get("/api/image");
-
-    res.data.data.map((El, index) => {
-      return El;
-    });
-    this.setState({ image: res.data.data });
-  };
 
   render() {
     return (
