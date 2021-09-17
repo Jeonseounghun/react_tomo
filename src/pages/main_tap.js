@@ -9,32 +9,47 @@ import Filter from "../components/section_filter";
 import Headerdetail from "../components/header_detail";
 import cheerio from "cheerio";
 
+
+const tap_title = {
+  title: "아이디찾기",
+  logo: logo,
+};
 const getHtml = async (url) => {
   try {
-
     return await axios.get(url);
   } catch (error) {
     console.error(error);
   }
 };
-const tap_title = {
-  title: "아이디찾기",
-  logo: logo,
-};
-
 class Main_tap extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
       footer: "main_tap",
-      headtag: "맞춤사업",
+      headtag: "전체사업",
       image: [],
+      item: 20,
+      all_tiem: 0,
     };
   }
 
   componentDidMount() {
     this._getData();
+    setTimeout(() => {
+      document.querySelector(".contents_list").addEventListener("scroll", () => {
+        let scrollX = document.querySelector(".contents_list").scrollHeight
+        let scrollY = document.querySelector(".contents_list").scrollTop
+        let scrollZ = document.querySelector(".contents_list").clientHeight
+
+        if (scrollX === scrollY + scrollZ) {
+          this.setState({ item: this.state.item + 20 })
+
+          this._getData();
+        }
+      })
+    }, 1)
+
   }
   edit_period = (content) => {
     content = content.replace(/\t/g, '');
@@ -51,7 +66,7 @@ class Main_tap extends Component {
 
 
     const res = await axios.get("/api/main_tap_data");
-
+    this.setState({ all_item: res.data.data.length })
     res.data.data.reverse().map((El, index) => {
       if (El.start_day) {
         res.data.data[index].start_day = El.start_day.slice(0, 10);
@@ -68,10 +83,10 @@ class Main_tap extends Component {
       return El;
     });
 
-    this.setState({ data: res.data.data });
+    this.setState({ data: res.data.data.slice(0, this.state.item) });
     // setTimeout(() => {
     //   let datalist = []
-    //   console.log("스타트")
+
     //   getHtml("/see/seea/selectSEEA100.do?menuId=80001001001").then((html) => {
     //     const $ = cheerio.load(html.data);
     //     const body = $(".bbsStyle1").find("tr").find(".txtAgL")
@@ -98,8 +113,10 @@ class Main_tap extends Component {
     //             minute = minute >= 10 ? minute : '0' + minute;
     //             second = second >= 10 ? second : '0' + second;
     //             let real_time = date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
-    //             console.log(real_time)
 
+    //             if (!$2("div.contBox")[0].children[0]) {
+    //               console.log("1")
+    //             }
     //             const textbox = {
     //               idx: "",
     //               title: $2("a#pNm").text(),
@@ -129,9 +146,10 @@ class Main_tap extends Component {
     //             if ((this.state.data.filter((datalist) => { return datalist.title === textbox.title })).length >= 1 ? false : true) {
     //               datalist.push(textbox)
 
-    //               console.log("스캔2")
+
     //             } else {
-    //               console.log("중복")
+
+    //               i = 100
     //             }
     //           }
     //         })
@@ -167,7 +185,7 @@ class Main_tap extends Component {
     return (
       <>
         <Headerdetail tap_title={tap_title} />
-        <MainTapContent data={this.state.data} headtag={this.state.headtag} />
+        <MainTapContent data={this.state.data} headtag={this.state.headtag} state={this.state} />
         <Filter />
         <Footer state={this.state.footer} />
       </>

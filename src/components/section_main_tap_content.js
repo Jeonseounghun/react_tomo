@@ -5,15 +5,22 @@ import "../scss/main_tap.scss";
 
 const MainTapContent = (props) => {
   const [headtag, setHeadtag] = useState(props.headtag);
+
   const suppoertDatas = props.data;
+
   let suppoertData = [];
+  let suppoertData2 = [(<div className="contents">
+    로딩중
+  </div>)];
   setTimeout(() => {
     const contentDday = document.querySelectorAll(".content__Dday");
     contentDday.forEach((El) => {
       const contentHeight = El.previousElementSibling.clientHeight;
       El.style.height = contentHeight + "px";
     });
+
   }, 1);
+
   switch (headtag) {
     case "관심사업":
       suppoertData = suppoertDatas.map((El) =>
@@ -223,7 +230,9 @@ const MainTapContent = (props) => {
         className="contents_list Business active"
         id="CustomizedBusiness"
       >
+
         {suppoertData}
+        {props.state.item <= props.state.all_item ? suppoertData2 : ""}
       </section>
     </>
   );

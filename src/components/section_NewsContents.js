@@ -118,7 +118,7 @@ const NewsContent = (props) => {
           </div>
         </div>
       </section>
-      <div class="bd"></div>
+      <div className="bd"></div>
       <section className="contents_list news active" id="startupNews">
         {!props.status ? newsContent : "로딩중"}
       </section>

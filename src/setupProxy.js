@@ -14,7 +14,7 @@ module.exports = function (app) {
     })
   );
   app.use(
-    createProxyMiddleware("/see", {
+    createProxyMiddleware("/see/", {
       target: "https://www.bizinfo.go.kr/",
       changeOrigin: true,
     })

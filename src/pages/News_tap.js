@@ -26,7 +26,7 @@ class News extends Component {
       data: [],
       footer: "news",
       headtag: "startnews",
-      category: "지원사업",
+      category: "기타",
       image: [],
       status: true,
     };
@@ -40,6 +40,7 @@ class News extends Component {
     for (let i = 1; i < 20; i++) {
       if (i === 1) {
         getHtml("/startup").then((html) => {
+
           const $ = cheerio.load(html.data);
           const bodyHead = $("div.post_header")
           bodyHead.each((idx, El) => {
