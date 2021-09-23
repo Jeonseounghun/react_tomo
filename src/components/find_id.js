@@ -178,7 +178,7 @@ const Find_id = () => {
           </div>
         </form>
       </section>
-      <Link to="/find_id/temporary">
+      <Link to="/nael/find_id/temporary">
         <section className="submit">
           <span>확인</span>
         </section>

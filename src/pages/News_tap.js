@@ -37,7 +37,7 @@ class News extends Component {
 
   _getData = async () => {
     let dataList = []
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i < 3; i++) {
       if (i === 1) {
         getHtml("/startup").then((html) => {
 

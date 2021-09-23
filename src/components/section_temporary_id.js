@@ -16,10 +16,10 @@ const TemporaryID = () => {
           </div>
           <div className="copy">복사하기</div>
           <div className="login__contain">
-            <Link to="/login">
+            <Link to="/nael/login">
               <div className="login">로그인</div>
             </Link>
-            <Link to="/login">
+            <Link to="/nael/login">
               <div className="confirm">확인</div>
             </Link>
           </div>

@@ -282,7 +282,7 @@ class Join extends Component {
       email_yn: this.state.email_yn,
       udp_id: this.state.udp_id,
     };
-    fetch("http://localhost:5000/api/member", {
+    fetch("http://localhost:5000/nael/api/member", {
       method: "post", //통신방법
       headers: {
         "content-type": "application/json",
@@ -290,7 +290,7 @@ class Join extends Component {
       body: JSON.stringify(textbox),
     })
       .then((res) => res.json())
-      .then((json) => {});
+      .then((json) => { });
   };
   render() {
     return (

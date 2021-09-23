@@ -19,20 +19,20 @@ import SearchTap from "./pages/Search";
 function App() {
   return (
     <>
-      <Route exact path="/" component={Intro} />
-      <Route exact path="/login" component={Login_tap} />
-      <Route exact path="/find_id" component={Find_id} />
-      <Route exact path="/find_id/temporary" component={TemporaryID} />
-      <Route exact path="/find_pw" component={Find_pw} />
-      <Route exact path="/find_pw/temporary" component={TemporaryPW} />
-      <Route exact path="/join" component={Join} />
-      <Route exact path="/main_tap" component={Main_tap} />
-      <Route exact path="/main_tap/:id" component={Detail} />
-      <Route exact path="/news" component={News} />
-      <Route exact path="/stage" component={Stage} />
-      <Route exact path="/stage/:id" component={StageDetail} />
-      <Route exact path="/more" component={More} />
-      <Route exact path="/search" component={SearchTap} />
+      <Route exact path="/nael/" component={Intro} />
+      <Route exact path="/nael/login" component={Login_tap} />
+      <Route exact path="/nael/find_id" component={Find_id} />
+      <Route exact path="/nael/find_id/temporary" component={TemporaryID} />
+      <Route exact path="/nael/find_pw" component={Find_pw} />
+      <Route exact path="/nael/find_pw/temporary" component={TemporaryPW} />
+      <Route exact path="/nael/join" component={Join} />
+      <Route exact path="/nael/main_tap" component={Main_tap} />
+      <Route exact path="/nael/main_tap/:id" component={Detail} />
+      <Route exact path="/nael/news" component={News} />
+      <Route exact path="/nael/stage" component={Stage} />
+      <Route exact path="/nael/stage/:id" component={StageDetail} />
+      <Route exact path="/nael/more" component={More} />
+      <Route exact path="/nael/search" component={SearchTap} />
     </>
   );
 }

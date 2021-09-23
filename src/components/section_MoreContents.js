@@ -403,11 +403,11 @@ const MoreContents = (props) => {
               </div>
 
               <div className="login__contain">
-                <Link to="/login">
+                <Link to="/nael/login">
                   <div className="login">로그인</div>
                 </Link>
                 <Link
-                  to="/more"
+                  to="/nael/more"
                   onClick={() => {
                     setChangePW("");
                   }}

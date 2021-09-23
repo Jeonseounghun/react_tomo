@@ -65,7 +65,7 @@ class Main_tap extends Component {
   _getData = async () => {
 
 
-    const res = await axios.get("/api/main_tap_data");
+    const res = await axios.get("/nael/api/main_tap_data");
     this.setState({ all_item: res.data.data.length })
     res.data.data.reverse().map((El, index) => {
       if (El.start_day) {
@@ -167,7 +167,7 @@ class Main_tap extends Component {
   };
   send_info = (textbox) => {
     console.log(textbox)
-    fetch("http://localhost:5000/api/main_tap_data2", {
+    fetch("http://localhost:5000/nael/api/main_tap_data2", {
       method: "post", //통신방법
       headers: {
         "content-type": "application/json",

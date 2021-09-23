@@ -7,7 +7,7 @@ const StageContents = (props) => {
     <div
       className="contents"
       onClick={() => {
-        window.location.href = `/stage/${El.idx}`;
+        window.location.href = `/nael/stage/${El.idx}`;
       }}
     >
       <div className="img">

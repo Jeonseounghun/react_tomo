@@ -15,7 +15,7 @@ const Headerdetail = (props) => {
             <img src={props.tap_title.logo} alt="" />
           </div>
           <div className="search__icon">
-            <Link to="/search">
+            <Link to="/nael/search">
               <i className="fas fa-search"></i>
             </Link>
           </div>

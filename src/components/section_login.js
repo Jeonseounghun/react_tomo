@@ -16,20 +16,20 @@ const SectionLogin = () => {
         <div className="login__password">
           <input type="text" placeholder="비밀번호" />
         </div>
-        <Link to="/main_tap">
+        <Link to="/nael/main_tap">
           <div className="login__start">
             <span>로그인</span>
           </div>
         </Link>
       </form>
       <div className="login__container">
-        <Link to="/find_id">
+        <Link to="/nael/find_id">
           <div className="find__id">아이디찾기</div>
         </Link>
-        <Link to="/find_pw">
+        <Link to="/nael/find_pw">
           <div className="find__password">비밀번호찾기</div>
         </Link>
-        <Link to="/join">
+        <Link to="/nael/join">
           <div className="register">회원가입</div>
         </Link>
       </div>

@@ -15,7 +15,7 @@ const SectionLogo = () => {
         아래에 있는 시작하기 번튼을 눌러서
         <br /> 당신의 사업을 시작해보세요 و٩(ᐛ)و
       </h2>
-      <Link to="/login">
+      <Link to="/nael/login">
         <div className="logo__start">
           <span>시작하기</span>
         </div>

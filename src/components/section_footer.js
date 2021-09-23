@@ -12,7 +12,7 @@ const Footer = (props) => {
               "footer container " + (state === "main_tap" ? "active" : "")
             }
           >
-            <Link to="/main_tap">
+            <Link to="/nael/main_tap">
               <span>
                 <i className="fas fa-list selected"></i>
               </span>
@@ -22,7 +22,7 @@ const Footer = (props) => {
           <div
             className={"footer container " + (state === "news" ? "active" : "")}
           >
-            <Link to="/news">
+            <Link to="/nael/news">
               <span>
                 <i className="fas fa-newspaper"></i>
               </span>
@@ -34,7 +34,7 @@ const Footer = (props) => {
               "footer container " + (state === "stage" ? "active" : "")
             }
           >
-            <Link to="/stage">
+            <Link to="/nael/stage">
               <span>
                 <i className="far fa-comment-dots"></i>
               </span>
@@ -44,7 +44,7 @@ const Footer = (props) => {
           <div
             className={"footer container " + (state === "more" ? "active" : "")}
           >
-            <Link to="/more">
+            <Link to="/nael/more">
               <span>
                 <i className="fas fa-ellipsis-h"></i>
               </span>

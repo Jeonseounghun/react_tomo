@@ -23,7 +23,7 @@ class StageDetail extends Component {
   }
 
   _getData = async () => {
-    const res = await axios.get("/api/stage_data");
+    const res = await axios.get("/nael/api/stage_data");
 
     res.data.data.map((El, index) => {
       if (El.udp_date) {

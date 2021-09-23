@@ -27,7 +27,7 @@ const MainTapContent = (props) => {
         El.sup_type === "사업화" ? (
           <div className="contents" key={El.idx}>
             <div className="content">
-              <Link to={"/main_tap/" + El.idx}>
+              <Link to={"/nael/main_tap/" + El.idx}>
                 <div className="content__title">{El.title}</div>
                 <div className="content__period">
                   {El.start_day} ~ {El.end_day}
@@ -68,7 +68,7 @@ const MainTapContent = (props) => {
       suppoertData = suppoertDatas.map((El, i) => (
         <div className="contents" key={El.idx}>
           <div className="content">
-            <Link to={"/main_tap/" + El.idx}>
+            <Link to={"/nael/main_tap/" + El.idx}>
               <div className="content__title">{El.title}</div>
               <div className="content__period">
                 {El.start_day} ~ {El.end_day}
@@ -106,7 +106,7 @@ const MainTapContent = (props) => {
         El.recommend > 50 ? (
           <div className="contents" key={El.idx}>
             <div className="content">
-              <Link to={"/main_tap/" + El.idx}>
+              <Link to={"/nael/main_tap/" + El.idx}>
                 <div className="content__title">{El.title}</div>
                 <div className="content__period">
                   {El.start_day} ~ {El.end_day}
@@ -147,7 +147,7 @@ const MainTapContent = (props) => {
         El.sup_condition === "창업5년미만" ? (
           <div className="contents" key={El.idx}>
             <div className="content">
-              <Link to={"/main_tap/" + El.idx}>
+              <Link to={"/nael/main_tap/" + El.idx}>
                 <div className="content__title">{El.title}</div>
                 <div className="content__period">
                   {El.start_day} ~ {El.end_day}
