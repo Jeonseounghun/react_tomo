@@ -6,6 +6,12 @@ import image2 from "../images/logo.png";
 const NewsContent = (props) => {
   const [category, setCategory] = useState(props.state.category);
   const newsContents = props.data;
+  const loadingStyle = {
+    "display": "flex",
+    "justify-content": "center",
+    "align-items": "center",
+  }
+  const loading = [<div className="loading" style={loadingStyle}>로딩중.....</div>]
   const newsContent = newsContents.map((El) =>
   (El.categori === category ?
     <div className="news_contents">
@@ -119,8 +125,8 @@ const NewsContent = (props) => {
         </div>
       </section>
       <div className="bd"></div>
-      <section className="contents_list news active" id="startupNews">
-        {!props.status ? newsContent : "로딩중"}
+      <section className="contents_list news active" id="startupNews" style={!props.status ? {} : loadingStyle}>
+        {!props.status ? newsContent : loading}
       </section>
     </>
   );

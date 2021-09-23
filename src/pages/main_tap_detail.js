@@ -24,7 +24,7 @@ class Detail extends Component {
   }
 
   _getData = async () => {
-    const res = await axios.get("/api/main_tap_data");
+    const res = await axios.get("/nael/api/main_tap_data");
 
     res.data.data.map((El, index) => {
       if (El.start_day) {
@@ -42,7 +42,7 @@ class Detail extends Component {
     return (
       <>
         <Headerdetail tap_title={tap_title} />
-        <DetailContents state={this.state.data}  />
+        <DetailContents state={this.state.data} />
         <Footer state={this.state.footer} />
       </>
     );
